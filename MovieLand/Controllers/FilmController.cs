@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace MovieLand.Controllers
 {
-    class FilmController
+    public class FilmController
     {
+
     }
 }
