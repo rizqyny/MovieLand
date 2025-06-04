@@ -1,6 +1,6 @@
 ﻿namespace MovieLand.Views
 {
-    partial class Login
+    partial class Register
     {
         /// <summary>
         /// Required designer variable.
@@ -28,19 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
             SuspendLayout();
             // 
-            // Login
+            // Register
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1924, 1055);
-            Name = "Login";
+            Name = "Register";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "LandingPage";
-            Load += LandingPage_Load;
+            Text = "Register";
+            WindowState = FormWindowState.Maximized;
+            Load += Register_Load;
             ResumeLayout(false);
         }
 
