@@ -22,5 +22,16 @@ namespace MovieLand.Views
         {
 
         }
+
+        private void btn_Login_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_Register_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Register register = new Register();
+            register.Show();
+        }
     }
 }
