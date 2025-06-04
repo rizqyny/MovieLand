@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             SuspendLayout();
             // 
-            // LandingPage
+            // Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1924, 1055);
-            Name = "LandingPage";
+            Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "LandingPage";
             Load += LandingPage_Load;
