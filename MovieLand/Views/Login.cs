@@ -42,7 +42,7 @@ namespace MovieLand.Views
                 try
                 {
                     conn.Open();
-                    string sql = "SELECT password FROM akun WHERE username = @username";
+                    string sql = "SELECT password FROM customers WHERE username = @username";
                     using (var cmd = new NpgsqlCommand(sql, conn))
                     {
                         cmd.Parameters.AddWithValue("username", username);
@@ -56,14 +56,13 @@ namespace MovieLand.Views
 
                         string passwordFromDb = result.ToString();
 
-                        if (password == passwordFromDb)  // Kalau sudah hash, lakukan verifikasi hash di sini
+                        if (password == passwordFromDb)
                         {
                             MessageBox.Show("Login berhasil!");
-                            FormDataDiri dashboard = new FormDataDiri();
+                            DataDiri dashboard = new DataDiri();
                             dashboard.Show();
 
                             this.Hide();
-                            // TODO: Buka form utama, simpan session, dll.
                         }
                         else
                         {
