@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MovieLand.Models
 {
-    public class Customer
+    public class CustomerModel
     {
         public string username { get; set; }
         public string password { get; set; }

@@ -5,44 +5,78 @@ using System.Text;
 using System.Threading.Tasks;
 using MovieLand.Models;
 using Npgsql;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace MovieLand.Controllers
 {
-    class Customer
+    public class Customer
     {
-        public List<Customer> DaftarCustomer = new List<Customer>();
-        private string connString = Database_Iqbal();
+        public static void Insert(CustomerModel customer)
+        {
+            string sql = "INSERT INTO customer(username, password, email) VALUES(@username, @password, @email)";
+            try
+            {
+                using (var conn = Database_Iqbal.GetConnection())
+                {
+                    conn.Open();
+                    using (var cmd = new NpgsqlCommand(sql, conn))
+                    {
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.AddWithValue("@username", customer.username);
+                        cmd.Parameters.AddWithValue("@password", customer.password);
+                        cmd.Parameters.AddWithValue("@email", customer.email);
+                    }
+                    conn.Close();
+                }
+            }
+            catch (NpgsqlException ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
+            }
+        }
 
-        public bool Insert(Customer a)
+        public static void UsernameExists(CustomerModel username)
         {
-            using var conn = new NpgsqlConnection(connString);
-            conn.Open();
-            string sql = "INSERT INTO customers (username, password, email) VALUES (@username, @password, @email)";
-            using var cmd = new NpgsqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@username", a.username);
-            cmd.Parameters.AddWithValue("@password", a.password);
-            cmd.Parameters.AddWithValue("@email", a.email);
-            return cmd.ExecuteNonQuery() > 0;
+            try
+            {
+                using (var conn = Database_Iqbal.GetConnection())
+                {
+                    string sql = "SELECT COUNT(*) FROM akun WHERE username = @username";
+                    conn.Open();
+                    using (var cmd = new NpgsqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@username", username);
+                        long count = (long)cmd.ExecuteScalar();
+                    }
+                    conn.Close();
+                }
+            }
+            catch (NpgsqlException ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
+            }
         }
-        public bool UsernameExists(string username)
+
+        public static void EmailExists(CustomerModel email)
         {
-            using var conn = new NpgsqlConnection(connString);
-            conn.Open();
-            string sql = "SELECT COUNT(*) FROM akun WHERE username = @username";
-            using var cmd = new NpgsqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@username", username);
-            long count = (long)cmd.ExecuteScalar();
-            return count > 0;
-        }
-        public bool EmailExists(string email)
-        {
-            using var conn = new NpgsqlConnection(connString);
-            conn.Open();
-            string sql = "SELECT COUNT(*) FROM akun WHERE email = @email";
-            using var cmd = new NpgsqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@email", email);
-            long count = (long)cmd.ExecuteScalar();
-            return count > 0;
+            try
+            {
+                using (var conn = Database_Iqbal.GetConnection())
+                {
+                    string sql = "SELECT COUNT(*) FROM akun WHERE email = @email";
+                    conn.Open();
+                    using (var cmd = new NpgsqlCommand(sql, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@email", email);
+                        long count = (long)cmd.ExecuteScalar();
+                    }
+                    conn.Close();
+                }
+            }
+            catch (NpgsqlException ex)
+            {
+                MessageBox.Show("Error : " + ex.Message);
+            }
         }
     }
 }

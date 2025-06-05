@@ -79,7 +79,7 @@
             btn_Register.TabIndex = 11;
             btn_Register.Text = "Register";
             btn_Register.UseVisualStyleBackColor = true;
-            btn_Register.Click += btn_Register_Click;
+            //btn_Register.Click += btn_Register_Click;
             // 
             // label1
             // 
@@ -110,7 +110,7 @@
             tb_PasswordConfirm.Name = "tb_PasswordConfirm";
             tb_PasswordConfirm.Size = new Size(283, 34);
             tb_PasswordConfirm.TabIndex = 14;
-            tb_PasswordConfirm.TextChanged += textBox1_TextChanged;
+            //tb_PasswordConfirm.TextChanged += textBox1_TextChanged;
             // 
             // label5
             // 
@@ -141,7 +141,7 @@
             button1.TabIndex = 18;
             button1.Text = "Kembali";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            //button1.Click += button1_Click;
             // 
             // Register
             // 
