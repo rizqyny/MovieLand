@@ -59,5 +59,15 @@ namespace MovieLand.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Light_Blue {
+            get {
+                object obj = ResourceManager.GetObject("Light Blue", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }
