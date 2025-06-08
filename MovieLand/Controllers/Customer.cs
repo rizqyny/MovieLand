@@ -10,7 +10,6 @@ namespace MovieLand.Controllers
 {
     public class CustomerController
     {
-        // Tambahkan jika Anda ingin menyimpan daftar customer di memori (opsional)
         public List<CustomerModel> DaftarCustomer = new List<CustomerModel>();
 
         public bool Insert(CustomerModel customer)

@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace MovieLand.Views
 {
-    public partial class DataDiri : Form
+    public partial class DashboardCustomer: Form
     {
-        public DataDiri()
+        public DashboardCustomer()
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
-        }
-
-        private void DataDiri_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

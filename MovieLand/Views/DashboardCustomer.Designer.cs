@@ -1,6 +1,6 @@
 ﻿namespace MovieLand.Views
 {
-    partial class DataDiri
+    partial class DashboardCustomer
     {
         /// <summary>
         /// Required designer variable.
@@ -28,17 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            SuspendLayout();
-            // 
-            // DataDiri
-            // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Name = "DataDiri";
-            Text = "DataDiri";
-            Load += DataDiri_Load;
-            ResumeLayout(false);
+            this.components = new System.ComponentModel.Container();
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "DashboardCustomer";
         }
 
         #endregion
