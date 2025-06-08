@@ -5,39 +5,43 @@ using System.Text;
 using System.Threading.Tasks;
 using MovieLand.Models;
 using Npgsql;
+using MovieLand;
 
 namespace MovieLand.Controllers
 {
-    class Customer
+    public class CustomerController
     {
+        
         public List<Customer> DaftarCustomer = new List<Customer>();
 
-        public bool Insert(Customer a)
+        public bool Insert(Customer customer)
         {
-            using var conn = new NpgsqlConnection(connString);
+            using var conn = Database_Iqbal.GetConnection();
             conn.Open();
             string sql = "INSERT INTO customers (username, password, email) VALUES (@username, @password, @email)";
             using var cmd = new NpgsqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@username", a.username);
-            cmd.Parameters.AddWithValue("@password", a.password);
-            cmd.Parameters.AddWithValue("@email", a.email);
+            cmd.Parameters.AddWithValue("@username", customer.username);
+            cmd.Parameters.AddWithValue("@password", customer.password);
+            cmd.Parameters.AddWithValue("@email", customer.email);
             return cmd.ExecuteNonQuery() > 0;
         }
+
         public bool UsernameExists(string username)
         {
-            using var conn = new NpgsqlConnection(connString);
+            using var conn = Database_Iqbal.GetConnection();
             conn.Open();
-            string sql = "SELECT COUNT(*) FROM akun WHERE username = @username";
+            string sql = "SELECT COUNT(*) FROM customers WHERE username = @username";
             using var cmd = new NpgsqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@username", username);
             long count = (long)cmd.ExecuteScalar();
             return count > 0;
         }
+
         public bool EmailExists(string email)
         {
-            using var conn = new NpgsqlConnection(connString);
+            using var conn = Database_Iqbal.GetConnection();
             conn.Open();
-            string sql = "SELECT COUNT(*) FROM akun WHERE email = @email";
+            string sql = "SELECT COUNT(*) FROM customers WHERE email = @email";
             using var cmd = new NpgsqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@email", email);
             long count = (long)cmd.ExecuteScalar();
