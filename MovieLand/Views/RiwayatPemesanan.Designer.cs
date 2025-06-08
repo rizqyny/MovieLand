@@ -1,6 +1,6 @@
 ﻿namespace MovieLand.Views
 {
-    partial class DashboardCustomer
+    partial class RiwayatPemesanan
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblDashboardCustomer = new Label();
+            lblRiwayatPemesanan = new Label();
             SuspendLayout();
             // 
-            // lblDashboardCustomer
+            // lblRiwayatPemesanan
             // 
-            lblDashboardCustomer.AutoSize = true;
-            lblDashboardCustomer.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDashboardCustomer.Location = new Point(264, 50);
-            lblDashboardCustomer.Name = "lblDashboardCustomer";
-            lblDashboardCustomer.Size = new Size(626, 81);
-            lblDashboardCustomer.TabIndex = 1;
-            lblDashboardCustomer.Text = "Dashboard Customer";
+            lblRiwayatPemesanan.AutoSize = true;
+            lblRiwayatPemesanan.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblRiwayatPemesanan.Location = new Point(264, 50);
+            lblRiwayatPemesanan.Name = "lblRiwayatPemesanan";
+            lblRiwayatPemesanan.Size = new Size(591, 81);
+            lblRiwayatPemesanan.TabIndex = 2;
+            lblRiwayatPemesanan.Text = "Riwayat Pemesanan";
             // 
-            // DashboardCustomer
+            // RiwayatPemesanan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(lblDashboardCustomer);
-            Name = "DashboardCustomer";
+            Controls.Add(lblRiwayatPemesanan);
+            Name = "RiwayatPemesanan";
             Size = new Size(1470, 1080);
             ResumeLayout(false);
             PerformLayout();
@@ -54,6 +54,6 @@
 
         #endregion
 
-        private Label lblDashboardCustomer;
+        private Label lblRiwayatPemesanan;
     }
 }

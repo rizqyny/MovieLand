@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MovieLand.DatabasePunyaIqbal;
 using MovieLand.Models;
 using Npgsql;
 
@@ -74,6 +75,38 @@ namespace MovieLand.Controllers
             cmd.Parameters.AddWithValue("@email", email);
             long count = (long)cmd.ExecuteScalar();
             return count > 0;
+        }
+        
+
+        public static List<CustomerModel> GetAllCustomer()
+        {
+            List<CustomerModel> customerModel = new List<CustomerModel>();
+            using (var conn = Database.GetConnection())
+            {
+                conn.Open();
+                string query = @"SELECT * FROM Customer";
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            CustomerModel customer = new CustomerModel
+                            {
+                                id_customer = reader.GetInt32(0),
+                                username = reader.GetString(1),
+                                password = reader.GetString(2),
+                                nama_lengkap = reader.GetString(3),
+                                alamat = reader.GetString(4),
+                                email = reader.GetString(5),
+                            };
+                            customerModel.Add(customer);
+                        }
+                    }
+                }
+                Database.CloseConnection();
+            }
+            return customerModel;
         }
     }
 }

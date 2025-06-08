@@ -69,7 +69,7 @@ namespace MovieLand.Views
                                 }
                                 else
                                 {
-                                    DashboardCustomer dashboardForm = new DashboardCustomer();
+                                    DashboardCustomerForm dashboardForm = new DashboardCustomerForm();
                                     dashboardForm.Show();
                                 }
 

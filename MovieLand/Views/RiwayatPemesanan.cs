@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace MovieLand.Views
 {
-    public partial class DashboardCustomer: UserControl
+    public partial class RiwayatPemesanan: UserControl
     {
-        public DashboardCustomer()
+        public RiwayatPemesanan()
         {
             InitializeComponent();
         }

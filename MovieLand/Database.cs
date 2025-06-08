@@ -15,10 +15,25 @@ namespace MovieLand
         private static string password = "123";
         private static string database = "MovieLand";
 
+        private static NpgsqlConnection conn;
+
         public static NpgsqlConnection GetConnection()
         {
-            string connString = $"Host={localhost};Port={port};Username={username};Password={password};Database={database}";
-            return new NpgsqlConnection(connString); // Selalu buat koneksi baru
+            if (conn == null)
+            {
+                string connString = $"Host={localhost};Port={port};Username={username};Password={password};Database={database}";
+                conn = new NpgsqlConnection(connString);
+            }
+            return conn;
+        }
+
+        public static void CloseConnection()
+        {
+            if (conn != null)
+            {
+                conn.Close();
+                conn = null;
+            }
         }
     }
 }

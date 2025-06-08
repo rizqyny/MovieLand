@@ -20,7 +20,7 @@ namespace MovieLand.Views
 
         private void ManageCustomer_Load(object sender, EventArgs e)
         {
-            dgvCustomer.DataSource = Customer.GetAllFilm();
+            dgvCustomer.DataSource = CustomerController.GetAllCustomer();
 
             dgvCustomer.Columns["id_customer"].HeaderText = "ID Customer";
             dgvCustomer.Columns["username"].HeaderText = "Username";

@@ -1,6 +1,6 @@
 ﻿namespace MovieLand.Views
 {
-    partial class DashboardCustomer
+    partial class ProfileCustomer
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblDashboardCustomer = new Label();
+            lblProfile = new Label();
             SuspendLayout();
             // 
-            // lblDashboardCustomer
+            // lblProfile
             // 
-            lblDashboardCustomer.AutoSize = true;
-            lblDashboardCustomer.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDashboardCustomer.Location = new Point(264, 50);
-            lblDashboardCustomer.Name = "lblDashboardCustomer";
-            lblDashboardCustomer.Size = new Size(626, 81);
-            lblDashboardCustomer.TabIndex = 1;
-            lblDashboardCustomer.Text = "Dashboard Customer";
+            lblProfile.AutoSize = true;
+            lblProfile.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblProfile.Location = new Point(264, 50);
+            lblProfile.Name = "lblProfile";
+            lblProfile.Size = new Size(221, 81);
+            lblProfile.TabIndex = 2;
+            lblProfile.Text = "Profile";
             // 
-            // DashboardCustomer
+            // ProfileCustomer
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(lblDashboardCustomer);
-            Name = "DashboardCustomer";
+            Controls.Add(lblProfile);
+            Name = "ProfileCustomer";
             Size = new Size(1470, 1080);
             ResumeLayout(false);
             PerformLayout();
@@ -54,6 +54,6 @@
 
         #endregion
 
-        private Label lblDashboardCustomer;
+        private Label lblProfile;
     }
 }
