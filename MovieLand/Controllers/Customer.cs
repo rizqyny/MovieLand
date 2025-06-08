@@ -11,7 +11,6 @@ namespace MovieLand.Controllers
     class Customer
     {
         public List<Customer> DaftarCustomer = new List<Customer>();
-        private string connString = Database_Iqbal();
 
         public bool Insert(Customer a)
         {
