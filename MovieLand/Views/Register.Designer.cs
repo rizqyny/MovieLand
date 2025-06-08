@@ -56,6 +56,7 @@
             tb_Username.Name = "tb_Username";
             tb_Username.Size = new Size(283, 34);
             tb_Username.TabIndex = 7;
+            tb_Username.TextChanged += tb_Username_TextChanged;
             // 
             // label2
             // 
@@ -129,6 +130,7 @@
             tb_Email.Name = "tb_Email";
             tb_Email.Size = new Size(283, 34);
             tb_Email.TabIndex = 16;
+            tb_Email.TextChanged += tb_Email_TextChanged;
             // 
             // button1
             // 
