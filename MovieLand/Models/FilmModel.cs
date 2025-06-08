@@ -17,10 +17,5 @@ namespace MovieLand.Models
         public int id_kategori { get; set; }
     }
 
-    public class KategoriModel
-    {
-        public int id_kategori { get; set; }
-        public string nama_kategori { get; set; }
-    }
 }
 

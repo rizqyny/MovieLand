@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace MovieLand.Models
 {
-    public class Customer
+    public class KategoriModel
     {
-        public string username { get; set; }
-        public string password { get; set; }
-        public string email { get; set; }
+        public int id_kategori { get; set; }
+        public string nama_kategori { get; set; }
     }
 }

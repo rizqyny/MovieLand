@@ -79,8 +79,8 @@ namespace MovieLand.Views
 
         private void label_Register_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Register register = new Register();
-            register.Show();
+            //Register register = new Register();
+            //register.Show();
         }
     }
 }
