@@ -80,5 +80,15 @@ namespace MovieLand.Views
                 MessageBox.Show("Registrasi gagal. Silakan coba lagi.");
             }
         }
+
+        private void tb_Username_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tb_Email_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
