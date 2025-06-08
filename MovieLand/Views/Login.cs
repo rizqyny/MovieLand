@@ -36,37 +36,49 @@ namespace MovieLand.Views
             }
 
             string connString = "Host=localhost;Username=postgres;Password=123;Database=MovieLand";
-
             using (var conn = new NpgsqlConnection(connString))
             {
                 try
                 {
                     conn.Open();
-                    string sql = "SELECT password FROM customers WHERE username = @username";
+
+                    string sql = "SELECT password, nama_lengkap FROM customer WHERE username = @username";
                     using (var cmd = new NpgsqlCommand(sql, conn))
                     {
                         cmd.Parameters.AddWithValue("username", username);
-                        var result = cmd.ExecuteScalar();
 
-                        if (result == null)
+                        using (var reader = cmd.ExecuteReader())
                         {
-                            MessageBox.Show("Username tidak ditemukan.");
-                            return;
-                        }
+                            if (!reader.Read())
+                            {
+                                MessageBox.Show("Username tidak ditemukan.");
+                                return;
+                            }
 
-                        string passwordFromDb = result.ToString();
+                            string passwordFromDb = reader.GetString(0);
+                            string namaLengkap = reader.IsDBNull(1) ? "" : reader.GetString(1);
 
-                        if (password == passwordFromDb)
-                        {
-                            MessageBox.Show("Login berhasil!");
-                            DataDiri dashboard = new DataDiri();
-                            dashboard.Show();
+                            if (password == passwordFromDb)
+                            {
+                                MessageBox.Show("Login berhasil!");
 
-                            this.Hide();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Password salah!");
+                                if (string.IsNullOrWhiteSpace(namaLengkap))
+                                {
+                                    DataDiri dataDiriForm = new DataDiri();
+                                    dataDiriForm.Show();
+                                }
+                                else
+                                {
+                                    DashboardCustomer dashboardForm = new DashboardCustomer();
+                                    dashboardForm.Show();
+                                }
+
+                                this.Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Password salah!");
+                            }
                         }
                     }
                 }
@@ -77,10 +89,11 @@ namespace MovieLand.Views
             }
         }
 
+
         private void label_Register_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //Register register = new Register();
-            //register.Show();
+            Register register = new Register();
+            register.Show();
         }
     }
 }
