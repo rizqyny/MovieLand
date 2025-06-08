@@ -86,6 +86,7 @@ namespace MovieLand.Views
 
             string imagePath2 = Path.Combine(Application.StartupPath, "Images", "Navy.jpg");
             btnManageFilm.BackgroundImage = Image.FromFile(imagePath2);
+            btnManageFilm.BackgroundImage = Image.FromFile(imagePath2);
 
             string imagePath3 = Path.Combine(Application.StartupPath, "Images", "Navy.jpg");
             btnManageCustomer.BackgroundImage = Image.FromFile(imagePath3);
@@ -106,6 +107,12 @@ namespace MovieLand.Views
             {
                 Login login = new Login();
                 login.Show();
+            }
+
+            else
+            {
+                string imagePath5 = Path.Combine(Application.StartupPath, "Images", "Navy.jpg");
+                btnLogout.BackgroundImage = Image.FromFile(imagePath5);
             }
         }
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MovieLand.DatabasePunyaIqbal;
 using MovieLand.Models;
 using Npgsql;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
@@ -77,6 +78,39 @@ namespace MovieLand.Controllers
             {
                 MessageBox.Show("Error : " + ex.Message);
             }
+        }
+
+
+        // NAMBAH INI BUAT MANAGE CUSTOMER DI ADMIN
+        public static List<CustomerModel> GetAllFilm()
+        {
+            List<CustomerModel> customerModel = new List<CustomerModel>();
+            using (var conn = DatabaseIqbal2.GetConnection())
+            {
+                conn.Open();
+                string query = @"SELECT * FROM Customer";
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            CustomerModel customer = new CustomerModel
+                            {
+                                id_customer = reader.GetInt32(0),
+                                username = reader.GetString(1),
+                                password = reader.GetString(2),
+                                nama_lengkap = reader.GetString(3),
+                                alamat = reader.GetString(4),
+                                email = reader.GetString(5),
+                            };
+                            customerModel.Add(customer);
+                        }
+                    }
+                }
+                DatabaseIqbal2.CloseConnection();
+            }
+            return customerModel;
         }
     }
 }

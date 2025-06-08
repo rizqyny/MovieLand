@@ -10,5 +10,8 @@ namespace MovieLand.Models
     {
         public int id_kategori { get; set; }
         public string nama_kategori { get; set; }
+
+
+        //public virtual ICollection<FilmModel> Film { get; set; }
     }
 }
