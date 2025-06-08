@@ -22,67 +22,6 @@ namespace MovieLand.Views
 
         private void Register_Load(object sender, EventArgs e)
         {
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_Register_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(tb_Username.Text) ||
-                string.IsNullOrWhiteSpace(tb_Password.Text) ||
-                string.IsNullOrWhiteSpace(tb_Email.Text) ||
-                string.IsNullOrWhiteSpace(tb_PasswordConfirm.Text))
-            {
-                MessageBox.Show("Semua field harus diisi!");
-                return;
-            }
-
-            if (tb_Password.Text != tb_PasswordConfirm.Text)
-            {
-                MessageBox.Show("Password tidak cocok!");
-                return;
-            }
-
-            var context = new CustomerController();
-
-            if (context.UsernameExists(tb_Username.Text))
-            {
-                MessageBox.Show("Username sudah tidak tersedia!");
-                return;
-            }
-
-            if (context.EmailExists(tb_Email.Text))
-            {
-                MessageBox.Show("Email sudah digunakan!");
-                return;
-            }
-
-            // Membuat objek customer dari model
-            CustomerModel customer = new CustomerModel
-            {
-                username = tb_Username.Text,
-                password = tb_Password.Text,
-                email = tb_Email.Text
-            };
-
-            bool success = context.Insert(customer);
-            if (success)
-            {
-                MessageBox.Show("Registrasi berhasil!");
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Registrasi gagal. Silakan coba lagi.");
-            }
-        }
-
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
         }
 

@@ -7,7 +7,7 @@ using Npgsql;
 
 namespace MovieLand
 {
-    public class Database_Iqbal
+    public class Database
     {
         private static string localhost = "localhost";
         private static string port = "5432";

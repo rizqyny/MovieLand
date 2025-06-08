@@ -15,7 +15,7 @@ namespace MovieLand.Controllers
 
         public bool Insert(CustomerModel customer)
         {
-            using var conn = Database_Iqbal.GetConnection();
+            using var conn = Database.GetConnection();
             conn.Open();
             string sql = "INSERT INTO customers (username, password, email) VALUES (@username, @password, @email)";
             using var cmd = new NpgsqlCommand(sql, conn);
@@ -27,7 +27,7 @@ namespace MovieLand.Controllers
 
         public bool UsernameExists(string username)
         {
-            using var conn = Database_Iqbal.GetConnection();
+            using var conn = Database.GetConnection();
             conn.Open();
             string sql = "SELECT COUNT(*) FROM customers WHERE username = @username";
             using var cmd = new NpgsqlCommand(sql, conn);
@@ -38,7 +38,7 @@ namespace MovieLand.Controllers
 
         public bool EmailExists(string email)
         {
-            using var conn = Database_Iqbal.GetConnection();
+            using var conn = Database.GetConnection();
             conn.Open();
             string sql = "SELECT COUNT(*) FROM customers WHERE email = @email";
             using var cmd = new NpgsqlCommand(sql, conn);
