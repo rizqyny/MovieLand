@@ -42,7 +42,7 @@ namespace MovieLand.Views
                 try
                 {
                     conn.Open();
-                    string sql = "SELECT password FROM customers WHERE username = @username";
+                    string sql = "SELECT password FROM customer WHERE username = @username";
                     using (var cmd = new NpgsqlCommand(sql, conn))
                     {
                         cmd.Parameters.AddWithValue("username", username);
@@ -79,8 +79,8 @@ namespace MovieLand.Views
 
         private void label_Register_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //Register register = new Register();
-            //register.Show();
+            Register register = new Register();
+            register.Show();
         }
     }
 }
