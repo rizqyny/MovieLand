@@ -41,7 +41,19 @@ namespace MovieLand.Views
 
         private void ProfileCustomer_Load(object sender, EventArgs e)
         {
+            var customer = Session.LoggedInCustomer;
 
+            if (customer != null)
+            {
+                lblNama.Text = customer.nama_lengkap;
+                lblEmail.Text = customer.email;
+                lblAlamat.Text = customer.alamat;
+                lblUsername.Text = customer.username;
+            }
+            else
+            {
+                MessageBox.Show("Gagal menampilkan data customer.");
+            }
         }
 
         private void lblNama_Click(object sender, EventArgs e)

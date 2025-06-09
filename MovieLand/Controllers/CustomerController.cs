@@ -81,12 +81,12 @@ namespace MovieLand.Controllers
             {
                 return new CustomerModel
                 {
-                    id_customer = reader.GetInt32(0),
-                    username = reader.GetString(1),
-                    password = reader.GetString(2),
-                    nama_lengkap = reader.IsDBNull(3) ? "" : reader.GetString(3),
-                    alamat = reader.IsDBNull(4) ? "" : reader.GetString(4),
-                    email = reader.GetString(5)
+                    id_customer = reader.GetInt32(reader.GetOrdinal("id_customer")),
+                    username = reader.GetString(reader.GetOrdinal("username")),
+                    password = reader.GetString(reader.GetOrdinal("password")),
+                    nama_lengkap = reader.IsDBNull(reader.GetOrdinal("nama_lengkap")) ? "" : reader.GetString(reader.GetOrdinal("nama_lengkap")),
+                    alamat = reader.IsDBNull(reader.GetOrdinal("alamat")) ? "" : reader.GetString(reader.GetOrdinal("alamat")),
+                    email = reader.GetString(reader.GetOrdinal("email"))
                 };
             }
 
