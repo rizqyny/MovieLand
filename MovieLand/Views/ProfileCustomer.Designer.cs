@@ -39,6 +39,7 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
+            button1 = new Button();
             SuspendLayout();
             // 
             // lblProfile
@@ -156,10 +157,22 @@
             label5.TabIndex = 12;
             label5.Text = "Password :";
             // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(820, 301);
+            button1.Name = "button1";
+            button1.Size = new Size(126, 57);
+            button1.TabIndex = 13;
+            button1.Text = "Edit Data";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // ProfileCustomer
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(button1);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -191,5 +204,6 @@
         private Label label3;
         private Label label4;
         private Label label5;
+        private Button button1;
     }
 }

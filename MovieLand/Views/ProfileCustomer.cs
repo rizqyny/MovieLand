@@ -70,7 +70,13 @@ namespace MovieLand.Views
 
         private void lblPassword_Click(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            EditDataCustomer editDataCustomer = new EditDataCustomer();
+            editDataCustomer.Show();
         }
     }
 }

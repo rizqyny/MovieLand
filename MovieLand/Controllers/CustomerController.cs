@@ -56,6 +56,30 @@ namespace MovieLand.Controllers
             }
         }
 
+
+        public bool UpdateCustomerData(string username, CustomerModel updatedData)
+        {
+            using var conn = Database.GetConnection();
+            conn.Open();
+
+            string updateSql = @"UPDATE customer 
+                         SET nama_lengkap = @nama_lengkap, 
+                             alamat = @alamat, 
+                             email = @email, 
+                             password = @password 
+                         WHERE username = @username";
+
+            using var cmd = new NpgsqlCommand(updateSql, conn);
+            cmd.Parameters.AddWithValue("@nama_lengkap", updatedData.nama_lengkap);
+            cmd.Parameters.AddWithValue("@alamat", updatedData.alamat);
+            cmd.Parameters.AddWithValue("@email", updatedData.email);
+            cmd.Parameters.AddWithValue("@password", updatedData.password);
+            cmd.Parameters.AddWithValue("@username", username);
+
+            return cmd.ExecuteNonQuery() > 0;
+        }
+
+
         public bool EmailExists(string email)
         {
             using var conn = Database.GetConnection();

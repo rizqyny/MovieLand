@@ -112,5 +112,10 @@ namespace MovieLand.Views
             DashboardCustomer dashboardCustomer = new DashboardCustomer();
             panelRight.Controls.Add(dashboardCustomer);
         }
+
+        private void panelRight_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

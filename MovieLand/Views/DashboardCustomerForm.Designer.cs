@@ -131,6 +131,7 @@
             panelRight.Name = "panelRight";
             panelRight.Size = new Size(1465, 1049);
             panelRight.TabIndex = 1;
+            panelRight.Paint += panelRight_Paint;
             // 
             // DashboardCustomerForm
             // 
