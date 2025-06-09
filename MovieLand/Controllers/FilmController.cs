@@ -43,7 +43,7 @@ namespace MovieLand.Controllers
                         }
                     }
                 }
-                Database.CloseConnection();
+                //Database.CloseConnection();
             }
             return filmModel;
         }

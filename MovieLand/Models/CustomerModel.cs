@@ -14,10 +14,5 @@ namespace MovieLand.Models
         public string username { get; set; }
         public string password { get; set; }
         public string email { get; set; }
-
-
-        //NAMBAH INI BUAT MANAGE CUSTOMER DI ADMIN
-        //public string nama_lengkap { get; set; }
-        //public string alamat { get; set; }
     }
 }
