@@ -62,7 +62,33 @@ namespace MovieLand.Controllers
             long count = (long)cmd.ExecuteScalar();
             return count > 0;
         }
-        
+
+        public CustomerModel GetCustomerByUsername(string username)
+        {
+            using var conn = Database.GetConnection();
+            conn.Open();
+
+            string sql = "SELECT * FROM customer WHERE username = @username";
+            using var cmd = new NpgsqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@username", username);
+
+            using var reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                return new CustomerModel
+                {
+                    id_customer = reader.GetInt32(0),
+                    username = reader.GetString(1),
+                    password = reader.GetString(2),
+                    nama_lengkap = reader.IsDBNull(3) ? "" : reader.GetString(3),
+                    alamat = reader.IsDBNull(4) ? "" : reader.GetString(4),
+                    email = reader.GetString(5)
+                };
+            }
+
+            return null;
+        }
+
 
         public static List<CustomerModel> GetAllCustomer()
         {

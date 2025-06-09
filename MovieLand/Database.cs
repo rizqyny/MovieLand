@@ -7,6 +7,11 @@ using Npgsql;
 
 namespace MovieLand
 {
+    public static class Session
+    {
+        public static string Username { get; set; }
+        public static int IdCustomer { get; set; }
+    }
     public class Database
     {
         private static string localhost = "localhost";

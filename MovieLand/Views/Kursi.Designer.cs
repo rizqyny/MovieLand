@@ -70,7 +70,9 @@
             Controls.Add(label1);
             Controls.Add(comboBox1);
             Name = "Kursi";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Kursi";
+            Load += Kursi_Load;
             ResumeLayout(false);
             PerformLayout();
         }
