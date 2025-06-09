@@ -29,7 +29,7 @@ namespace MovieLand.Views
         {
             List<FilmModel> filmList = FilmController.GetAllFilm();
 
-            int x = 200, y = 230;
+            int x = 200, y = 200;
             int maxPerRow = 4;
             int counter = 0;
 

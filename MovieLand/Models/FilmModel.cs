@@ -14,7 +14,6 @@ namespace MovieLand.Models
         public string deskripsi { get; set; }
         public int harga { get; set; }
         public string gambar { get; set; }
-
         public string nama_kategori { get; set; }
 
         //public virtual KategoriModel Kategori { get; set; }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MovieLand.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,5 +10,10 @@ namespace MovieLand
     public static class Helpers
     {
         public static string LoggedInUsername { get; set; }
+    }
+
+    public static class Session
+    {
+        public static CustomerModel CurrentUser { get; set; }
     }
 }

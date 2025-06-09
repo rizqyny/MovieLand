@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace MovieLand.Views
 {
-    public partial class RiwayatPemesanan: UserControl
+    public partial class RiwayatPemesanan : UserControl
     {
         public RiwayatPemesanan()
         {
             InitializeComponent();
+        }
+
+        private void RiwayatPemesanan_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

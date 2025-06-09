@@ -63,6 +63,7 @@ namespace MovieLand.Views
                             string namaLengkap = reader.IsDBNull(1) ? "" : reader.GetString(1);
                             
                             Helpers.LoggedInUsername = username;
+                            
                             if (password == passwordFromDb)
                             {
                                 MessageBox.Show("Login berhasil!");

@@ -28,32 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblRiwayatPemesanan = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RiwayatPemesanan));
             SuspendLayout();
-            // 
-            // lblRiwayatPemesanan
-            // 
-            lblRiwayatPemesanan.AutoSize = true;
-            lblRiwayatPemesanan.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblRiwayatPemesanan.Location = new Point(264, 50);
-            lblRiwayatPemesanan.Name = "lblRiwayatPemesanan";
-            lblRiwayatPemesanan.Size = new Size(591, 81);
-            lblRiwayatPemesanan.TabIndex = 2;
-            lblRiwayatPemesanan.Text = "Riwayat Pemesanan";
             // 
             // RiwayatPemesanan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(lblRiwayatPemesanan);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             Name = "RiwayatPemesanan";
             Size = new Size(1470, 1080);
+            Load += RiwayatPemesanan_Load;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label lblRiwayatPemesanan;
     }
 }

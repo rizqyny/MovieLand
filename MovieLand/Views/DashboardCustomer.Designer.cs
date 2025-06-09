@@ -37,7 +37,7 @@
             lblDashboardCustomer.AutoSize = true;
             lblDashboardCustomer.BackColor = Color.White;
             lblDashboardCustomer.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDashboardCustomer.Location = new Point(264, 50);
+            lblDashboardCustomer.Location = new Point(183, 50);
             lblDashboardCustomer.Name = "lblDashboardCustomer";
             lblDashboardCustomer.Size = new Size(626, 81);
             lblDashboardCustomer.TabIndex = 1;
