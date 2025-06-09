@@ -43,13 +43,17 @@ namespace MovieLand.Controllers
 
         public bool UsernameExists(string username)
         {
-            using var conn = Database.GetConnection();
-            conn.Open();
-            string sql = "SELECT COUNT(*) FROM customer WHERE username = @username";
-            using var cmd = new NpgsqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@username", username);
-            long count = (long)cmd.ExecuteScalar();
-            return count > 0;
+            using (var conn = Database.GetConnection())
+            {
+                conn.Open();
+                string query = "SELECT COUNT(*) FROM customer WHERE username = @Username";
+                using (var cmd = new NpgsqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Username", username);
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    return count > 0;
+                }
+            }
         }
 
         public bool EmailExists(string email)
@@ -90,7 +94,7 @@ namespace MovieLand.Controllers
                         }
                     }
                 }
-                Database.CloseConnection();
+                //Database.CloseConnection();
             }
             return customerModel;
         }
