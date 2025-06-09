@@ -32,7 +32,7 @@
             tbAlamat = new TextBox();
             label1 = new Label();
             label2 = new Label();
-            btnSimpan = new Button();
+            btn_Simpanasli = new Button();
             SuspendLayout();
             // 
             // tbNama_lengkap
@@ -73,16 +73,15 @@
             label2.TabIndex = 3;
             label2.Text = "Alamat";
             // 
-            // btnSimpan
+            // btn_Simpanasli
             // 
-            btnSimpan.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnSimpan.Location = new Point(1084, 572);
-            btnSimpan.Name = "btnSimpan";
-            btnSimpan.Size = new Size(107, 40);
-            btnSimpan.TabIndex = 5;
-            btnSimpan.Text = "Simpan";
-            btnSimpan.UseVisualStyleBackColor = true;
-            btnSimpan.Click += btnSimpan_Click;
+            btn_Simpanasli.Location = new Point(1035, 607);
+            btn_Simpanasli.Name = "btn_Simpanasli";
+            btn_Simpanasli.Size = new Size(94, 29);
+            btn_Simpanasli.TabIndex = 4;
+            btn_Simpanasli.Text = "Simpan";
+            btn_Simpanasli.UseVisualStyleBackColor = true;
+            btn_Simpanasli.Click += btn_Simpanasli_Click;
             // 
             // DataDiri
             // 
@@ -90,7 +89,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.MovieLand__1_;
             ClientSize = new Size(1532, 981);
-            Controls.Add(btnSimpan);
+            Controls.Add(btn_Simpanasli);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(tbAlamat);
@@ -108,6 +107,6 @@
         private TextBox tbAlamat;
         private Label label1;
         private Label label2;
-        private Button btnSimpan;
+        private Button btn_Simpanasli;
     }
 }

@@ -30,25 +30,11 @@ namespace MovieLand.Controllers
             using var conn = Database.GetConnection();
             conn.Open();
 
-            // Ambil id dari tabel akun berdasarkan username
-            string getIdSql = "SELECT id FROM akun WHERE username = @username";
-            using var getIdCmd = new NpgsqlCommand(getIdSql, conn);
-            getIdCmd.Parameters.AddWithValue("@username", username);
-            var idObj = getIdCmd.ExecuteScalar();
-
-            if (idObj == null)
-            {
-                return false; // username tidak ditemukan
-            }
-
-            int id_akun = Convert.ToInt32(idObj);
-
-            // Insert data diri ke tabel customer
-            string insertSql = "INSERT INTO customer (id_akun, nama_lengkap, alamat) VALUES (@id_akun, @nama_lengkap, @alamat)";
+            string insertSql = "UPDATE customer SET nama_lengkap = @nama_lengkap, alamat = @alamat WHERE username = @username";
             using var insertCmd = new NpgsqlCommand(insertSql, conn);
-            insertCmd.Parameters.AddWithValue("@id_akun", id_akun);
             insertCmd.Parameters.AddWithValue("@nama_lengkap", customer.nama_lengkap);
             insertCmd.Parameters.AddWithValue("@alamat", customer.alamat);
+            insertCmd.Parameters.AddWithValue("@username", username);
 
             return insertCmd.ExecuteNonQuery() > 0;
         }

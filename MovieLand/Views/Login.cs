@@ -65,6 +65,7 @@ namespace MovieLand.Views
                                 if (string.IsNullOrWhiteSpace(namaLengkap))
                                 {
                                     DataDiri dataDiriForm = new DataDiri();
+                                    dataDiriForm.LoggedInUsername = username;
                                     dataDiriForm.Show();
                                 }
                                 else

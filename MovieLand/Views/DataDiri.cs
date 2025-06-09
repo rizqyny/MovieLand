@@ -13,8 +13,10 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace MovieLand.Views
 {
+
     public partial class DataDiri : Form
     {
+        public string LoggedInUsername { get; set; }
         public DataDiri()
         {
             InitializeComponent();
@@ -36,55 +38,26 @@ namespace MovieLand.Views
 
         }
 
-        private void btnSimpan_Click(object sender, EventArgs e, string username)
+        private void btn_Simpanasli_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(tbNama_lengkap.Text) ||
-                string.IsNullOrWhiteSpace(tbAlamat.Text))
-            {
-                MessageBox.Show("Semua field harus diisi!");
-                return;
-            }
-
-            var context = new CustomerController();
-
-            // Membuat objek customer dari model
+            CustomerController controller = new CustomerController();
             CustomerModel customer = new CustomerModel
             {
                 nama_lengkap = tbNama_lengkap.Text,
-                alamat = tbAlamat.Text,
+                alamat = tbAlamat.Text
             };
 
-            bool success = context.InsertDataDiri(customer, username);
-            if (success)
+            if (controller.InsertDataDiri(customer, LoggedInUsername))
             {
-                MessageBox.Show("Registrasi berhasil!");
-                this.Close();
+                MessageBox.Show("Data diri berhasil disimpan.");
+                DashboardCustomer dashboard = new DashboardCustomer();
+                dashboard.Show();
+                this.Hide();
             }
             else
             {
-                MessageBox.Show("Registrasi gagal. Silakan coba lagi.");
+                MessageBox.Show("Gagal menyimpan data diri.");
             }
-        }
-
-        private void btnSimpan_Click(object sender, EventArgs e)
-        {
-            //    if (string.IsNullOrWhiteSpace(tbNama_lengkap.Text) ||
-            //        string.IsNullOrWhiteSpace(tbAlamat.Text))
-            //    {
-            //        MessageBox.Show("Semua field harus diisi!");
-            //        return;
-            //    }
-
-            //    var context = new CustomerController();
-
-            //    // Membuat objek customer dari model
-            //    CustomerModel customer = new CustomerModel
-            //    {
-            //        nama_lengkap = tbNama_lengkap.Text,
-            //        alamat = tbAlamat.Text,
-            //    };
-
-            //    bool success = context.InsertDataDiri(customer, username);
         }
     }
 }
