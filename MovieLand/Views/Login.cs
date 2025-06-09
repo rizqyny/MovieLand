@@ -29,6 +29,7 @@ namespace MovieLand.Views
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
+
             string username = tb_Username.Text.Trim();
             string password = tb_Password.Text.Trim();
 
@@ -60,13 +61,15 @@ namespace MovieLand.Views
 
                             string passwordFromDb = reader.GetString(0);
                             string namaLengkap = reader.IsDBNull(1) ? "" : reader.GetString(1);
-
+                            
+                            Helpers.LoggedInUsername = username;
                             if (password == passwordFromDb)
                             {
                                 MessageBox.Show("Login berhasil!");
 
                                 if (string.IsNullOrWhiteSpace(namaLengkap))
                                 {
+                                    
                                     DataDiri dataDiriForm = new DataDiri();
                                     dataDiriForm.LoggedInUsername = username;
                                     dataDiriForm.Show();

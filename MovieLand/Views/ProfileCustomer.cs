@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MovieLand.Controllers;
 using MovieLand.Models;
 using static System.Collections.Specialized.BitVector32;
+using MovieLand;
 
 
 namespace MovieLand.Views
@@ -19,46 +20,57 @@ namespace MovieLand.Views
         public ProfileCustomer()
         {
             InitializeComponent();
-            // Ambil username dari session
-            string loggedInUsername = Session.Username;
-
-            // Ambil data customer dari database
-            CustomerController controller = new CustomerController();
-            CustomerModel customer = controller.GetCustomerByUsername(loggedInUsername);
-
-            if (customer != null)
-            {
-                lblNama.Text = customer.nama_lengkap;
-                lblUsername.Text = customer.username;
-                lblEmail.Text = customer.email;
-                lblAlamat.Text = customer.alamat;
-            }
-            else
-            {
-                MessageBox.Show("Data customer tidak ditemukan.");
-            }
         }
 
         private void ProfileCustomer_Load(object sender, EventArgs e)
         {
-            var customer = Session.LoggedInCustomer;
+            string username = Helpers.LoggedInUsername;
+            if (string.IsNullOrEmpty(username))
+            {
+                MessageBox.Show("Gagal memuat profil. Username tidak ditemukan.");
+                return;
+            }
+
+            CustomerController controller = new CustomerController();
+            CustomerModel customer = controller.GetCustomerByUsername(username);
 
             if (customer != null)
             {
                 lblNama.Text = customer.nama_lengkap;
                 lblEmail.Text = customer.email;
-                lblAlamat.Text = customer.alamat;
                 lblUsername.Text = customer.username;
+                lblPassword.Text = customer.password;
+                lblAlamat.Text = customer.alamat;
             }
             else
             {
-                MessageBox.Show("Gagal menampilkan data customer.");
+                MessageBox.Show("Data pengguna tidak ditemukan.");
             }
         }
 
         private void lblNama_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lblEmail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblUsername_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAlamat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblPassword_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
