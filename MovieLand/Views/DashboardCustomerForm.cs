@@ -104,5 +104,12 @@ namespace MovieLand.Views
         {
 
         }
+
+        private void DashboardCustomerForm_Load(object sender, EventArgs e)
+        {
+            panelRight.Controls.Clear();
+            DashboardCustomer dashboardCustomer = new DashboardCustomer();
+            panelRight.Controls.Add(dashboardCustomer);
+        }
     }
 }
