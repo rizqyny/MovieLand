@@ -24,7 +24,7 @@ namespace MovieLand.Views
         {
 
         }
-
+        
         public void SetData(string judul, string pathGambar)
         {
             lblJudul.Text = judul;
@@ -34,7 +34,7 @@ namespace MovieLand.Views
             }
             else
             {
-                pbGambarFilm.Image = null; // atau placeholder
+                pbGambarFilm.Image = null; 
             }
 
 
@@ -42,14 +42,14 @@ namespace MovieLand.Views
 
         private void pbGambarFilm_Click(object sender, EventArgs e)
         {
-            AddFilmForm addFilmForm = new AddFilmForm();
-            addFilmForm.Show();
+            FilmClick filmClick = new FilmClick();
+            filmClick.Show();
         }
 
         private void lblJudul_Click(object sender, EventArgs e)
         {
-            AddFilmForm addFilmForm = new AddFilmForm();
-            addFilmForm.Show();
+            FilmClick filmClick = new FilmClick();
+            filmClick.Show();
         }
     }
 }

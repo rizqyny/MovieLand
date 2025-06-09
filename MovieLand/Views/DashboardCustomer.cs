@@ -33,10 +33,14 @@ namespace MovieLand.Views
             int maxPerRow = 4;
             int counter = 0;
 
+
+
             foreach (var film in filmList)
             {
+                string path = Path.Combine(Application.StartupPath, "Images", $"{film.gambar}");
+
                 CardFilm card = new CardFilm();
-                card.SetData(film.judul, film.gambar); // gambar = path
+                card.SetData(film.judul, path); // gambar = path
                 card.Size = new Size(202, 345);
                 card.Location = new Point(x, y);
 

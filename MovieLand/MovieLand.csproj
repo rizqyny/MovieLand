@@ -11,6 +11,8 @@
   <ItemGroup>
     <None Remove="Images\LightBlue.jpg" />
     <None Remove="Images\Navy.jpg" />
+    <None Remove="Images\Pengabdi Setan %282017%29.jpeg" />
+    <None Remove="Images\World War Z %282013%29.jpeg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -22,6 +24,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Navy.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\Pengabdi Setan (2017).jpeg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\World War Z (2013).jpeg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
