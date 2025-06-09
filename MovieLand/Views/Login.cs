@@ -21,7 +21,10 @@ namespace MovieLand.Views
 
         private void LandingPage_Load(object sender, EventArgs e)
         {
-
+            label1.BackColor = Color.Transparent;
+            label2.BackColor = Color.Transparent;
+            label3.BackColor = Color.Transparent;
+            label_Register.BackColor = Color.Transparent;
         }
 
         private void btn_Login_Click(object sender, EventArgs e)
@@ -74,7 +77,7 @@ namespace MovieLand.Views
                                     dashboardForm.Show();
                                 }
 
-                                this.Hide();
+                                //this.Hide();
                             }
                             else
                             {

@@ -141,6 +141,7 @@
             Name = "DashboardCustomerForm";
             Text = "DashboardCustomer";
             WindowState = FormWindowState.Maximized;
+            Load += DashboardCustomerForm_Load;
             tableLayoutPanel1.ResumeLayout(false);
             panelLeft.ResumeLayout(false);
             ResumeLayout(false);

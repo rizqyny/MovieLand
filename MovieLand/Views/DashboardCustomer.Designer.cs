@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardCustomer));
             lblDashboardCustomer = new Label();
             SuspendLayout();
             // 
             // lblDashboardCustomer
             // 
             lblDashboardCustomer.AutoSize = true;
+            lblDashboardCustomer.BackColor = Color.White;
             lblDashboardCustomer.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDashboardCustomer.Location = new Point(264, 50);
             lblDashboardCustomer.Name = "lblDashboardCustomer";
@@ -45,9 +47,11 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             Controls.Add(lblDashboardCustomer);
             Name = "DashboardCustomer";
             Size = new Size(1470, 1080);
+            Load += DashboardCustomer_Load;
             ResumeLayout(false);
             PerformLayout();
         }
