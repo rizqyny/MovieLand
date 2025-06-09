@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             lblProfile = new Label();
+            textBox1 = new TextBox();
             SuspendLayout();
             // 
             // lblProfile
@@ -41,10 +42,19 @@
             lblProfile.TabIndex = 2;
             lblProfile.Text = "Profile";
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(528, 386);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(232, 36);
+            textBox1.TabIndex = 4;
+            // 
             // ProfileCustomer
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(textBox1);
             Controls.Add(lblProfile);
             Name = "ProfileCustomer";
             Size = new Size(1470, 1080);
@@ -55,5 +65,6 @@
         #endregion
 
         private Label lblProfile;
+        private TextBox textBox1;
     }
 }
