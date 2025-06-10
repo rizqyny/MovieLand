@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             pictureBox1 = new PictureBox();
-            label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
+            lbl_Judul = new Label();
+            lbl_Kategori = new Label();
+            lbl_Durasi = new Label();
             button1 = new Button();
             button2 = new Button();
-            label4 = new Label();
+            lbl_Harga = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -46,35 +46,35 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // label1
+            // lbl_Judul
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(465, 183);
-            label1.Name = "label1";
-            label1.Size = new Size(63, 25);
-            label1.TabIndex = 1;
-            label1.Text = "label1";
+            lbl_Judul.AutoSize = true;
+            lbl_Judul.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbl_Judul.Location = new Point(465, 183);
+            lbl_Judul.Name = "lbl_Judul";
+            lbl_Judul.Size = new Size(63, 25);
+            lbl_Judul.TabIndex = 1;
+            lbl_Judul.Text = "label1";
             // 
-            // label2
+            // lbl_Kategori
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 10F);
-            label2.Location = new Point(473, 224);
-            label2.Name = "label2";
-            label2.Size = new Size(55, 23);
-            label2.TabIndex = 2;
-            label2.Text = "label2";
+            lbl_Kategori.AutoSize = true;
+            lbl_Kategori.Font = new Font("Segoe UI", 10F);
+            lbl_Kategori.Location = new Point(473, 224);
+            lbl_Kategori.Name = "lbl_Kategori";
+            lbl_Kategori.Size = new Size(55, 23);
+            lbl_Kategori.TabIndex = 2;
+            lbl_Kategori.Text = "label2";
             // 
-            // label3
+            // lbl_Durasi
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 10F);
-            label3.Location = new Point(473, 263);
-            label3.Name = "label3";
-            label3.Size = new Size(55, 23);
-            label3.TabIndex = 3;
-            label3.Text = "label3";
+            lbl_Durasi.AutoSize = true;
+            lbl_Durasi.Font = new Font("Segoe UI", 10F);
+            lbl_Durasi.Location = new Point(473, 263);
+            lbl_Durasi.Name = "lbl_Durasi";
+            lbl_Durasi.Size = new Size(55, 23);
+            lbl_Durasi.TabIndex = 3;
+            lbl_Durasi.Text = "label3";
             // 
             // button1
             // 
@@ -96,31 +96,32 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
-            // label4
+            // lbl_Harga
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 10F);
-            label4.Location = new Point(473, 297);
-            label4.Name = "label4";
-            label4.Size = new Size(55, 23);
-            label4.TabIndex = 6;
-            label4.Text = "label4";
+            lbl_Harga.AutoSize = true;
+            lbl_Harga.Font = new Font("Segoe UI", 10F);
+            lbl_Harga.Location = new Point(473, 297);
+            lbl_Harga.Name = "lbl_Harga";
+            lbl_Harga.Size = new Size(55, 23);
+            lbl_Harga.TabIndex = 6;
+            lbl_Harga.Text = "label4";
             // 
             // FilmClick
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(982, 503);
-            Controls.Add(label4);
+            Controls.Add(lbl_Harga);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(lbl_Durasi);
+            Controls.Add(lbl_Kategori);
+            Controls.Add(lbl_Judul);
             Controls.Add(pictureBox1);
             Name = "FilmClick";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FilmClick";
+            Load += FilmClick_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -129,11 +130,11 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private Label label1;
-        private Label label2;
-        private Label label3;
+        private Label lbl_Judul;
+        private Label lbl_Kategori;
+        private Label lbl_Durasi;
         private Button button1;
         private Button button2;
-        private Label label4;
+        private Label lbl_Harga;
     }
 }

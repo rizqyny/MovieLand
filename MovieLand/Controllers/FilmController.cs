@@ -47,5 +47,32 @@ namespace MovieLand.Controllers
             }
             return filmModel;
         }
+        public FilmModel GetFilmbyID(string judul)
+        {
+            using var conn = Database.GetConnection();
+            conn.Open();
+
+            string sql = "SELECT f.judul, f.durasi, f.deskripsi, f.harga, kt.nama_kategori from film join kategori kt using(id_kategori) where judul = @judul";
+            using var cmd = new NpgsqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@judul", judul);
+
+            using var reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                return new FilmModel
+                {
+                    id_film = reader.GetInt32(reader.GetOrdinal("id_film")),
+                    judul = reader.GetString(reader.GetOrdinal("judul")),
+                    durasi = reader.GetInt32(reader.GetOrdinal("durasi")),
+                    deskripsi = reader.GetString(reader.GetOrdinal("deskripsi")),
+                    harga = reader.GetInt32(reader.GetOrdinal("harga")),
+                    gambar = reader.GetString(reader.GetOrdinal("email")),
+                    nama_kategori = reader.GetString(reader.GetOrdinal("nama_kategori"))
+                };
+            }
+
+            return null;
+
+        }
     }
 }
