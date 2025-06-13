@@ -41,7 +41,8 @@ namespace MovieLand.Views
 
         private void btn_Pesan_Click(object sender, EventArgs e)
         {
-
+            Kursi kursi = new Kursi();
+            kursi.Show();
         }
 
         private void btn_Tutup_Click(object sender, EventArgs e)

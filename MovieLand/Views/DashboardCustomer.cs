@@ -40,7 +40,6 @@ namespace MovieLand.Views
                 CardFilm card = new CardFilm();
                 card.SetData(film.judul, path); // gambar = path
 
-                // ✅ Tangani event FilmClicked DI SINI
                 card.FilmClicked += (s, judulFilm) =>
                 {
                     FilmController controller = new FilmController();
