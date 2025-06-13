@@ -15,47 +15,38 @@ namespace MovieLand.Views
 {
     public partial class FilmClick : Form
     {
-        public FilmClick()
+        private readonly FilmModel _film;
+
+        public FilmClick(FilmModel film)
         {
             InitializeComponent();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Kursi kursi = new Kursi();
-            kursi.Show();
-            this.Hide();
+            _film = film;
         }
 
         private void FilmClick_Load(object sender, EventArgs e)
         {
-            string judul = Helpers.ClickJudul;
-            if (string.IsNullOrEmpty(judul))
-            {
-                MessageBox.Show("Gagal memuat profil. Username tidak ditemukan.");
-                return;
-            }
+            lbl_Judul.Text = _film.judul;
+            lbl_Durasi.Text = _film.durasi + " menit";
+            //lbl_Deskripsi.Text = _film.deskripsi;
+            lbl_Harga.Text = "Rp " + _film.harga.ToString("N0");
+            lbl_Kategori.Text = _film.nama_kategori;
 
-            FilmController controller = new FilmController();
-            FilmModel film = controller.GetFilmbyID(judul);
+            string path = Path.Combine(Application.StartupPath, "Images", _film.gambar);
+            if (File.Exists(path))
+            {
+                pb_Poster.Image = Image.FromFile(path);
+            }
+        }
 
-            if (film != null)
-            {
-                lbl_Judul.Text = film.judul;
-                lbl_Kategori.Text = film.nama_kategori;
-                //lbl_Durasi. = film.durasi;
-                //lbl_Harga.Text = film.harga;
-                //lblAlamat.Text = customer.alamat;
-            }
-            else
-            {
-                MessageBox.Show("Data pengguna tidak ditemukan.");
-            }
+
+        private void btn_Pesan_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_Tutup_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

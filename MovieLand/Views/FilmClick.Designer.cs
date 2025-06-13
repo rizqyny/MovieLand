@@ -28,23 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
+            pb_Poster = new PictureBox();
             lbl_Judul = new Label();
             lbl_Kategori = new Label();
             lbl_Durasi = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            btn_Pesan = new Button();
+            btn_Tutup = new Button();
             lbl_Harga = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pb_Poster).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // pb_Poster
             // 
-            pictureBox1.Location = new Point(435, 12);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(125, 154);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            pb_Poster.Location = new Point(435, 12);
+            pb_Poster.Name = "pb_Poster";
+            pb_Poster.Size = new Size(125, 154);
+            pb_Poster.TabIndex = 0;
+            pb_Poster.TabStop = false;
             // 
             // lbl_Judul
             // 
@@ -76,25 +76,25 @@
             lbl_Durasi.TabIndex = 3;
             lbl_Durasi.Text = "label3";
             // 
-            // button1
+            // btn_Pesan
             // 
-            button1.Location = new Point(382, 358);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 4;
-            button1.Text = "Pesan ";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btn_Pesan.Location = new Point(382, 358);
+            btn_Pesan.Name = "btn_Pesan";
+            btn_Pesan.Size = new Size(94, 29);
+            btn_Pesan.TabIndex = 4;
+            btn_Pesan.Text = "Pesan ";
+            btn_Pesan.UseVisualStyleBackColor = true;
+            btn_Pesan.Click += btn_Pesan_Click;
             // 
-            // button2
+            // btn_Tutup
             // 
-            button2.Location = new Point(504, 358);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 29);
-            button2.TabIndex = 5;
-            button2.Text = "Kembali";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            btn_Tutup.Location = new Point(504, 358);
+            btn_Tutup.Name = "btn_Tutup";
+            btn_Tutup.Size = new Size(94, 29);
+            btn_Tutup.TabIndex = 5;
+            btn_Tutup.Text = "Kembali";
+            btn_Tutup.UseVisualStyleBackColor = true;
+            btn_Tutup.Click += btn_Tutup_Click;
             // 
             // lbl_Harga
             // 
@@ -112,29 +112,29 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(982, 503);
             Controls.Add(lbl_Harga);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btn_Tutup);
+            Controls.Add(btn_Pesan);
             Controls.Add(lbl_Durasi);
             Controls.Add(lbl_Kategori);
             Controls.Add(lbl_Judul);
-            Controls.Add(pictureBox1);
+            Controls.Add(pb_Poster);
             Name = "FilmClick";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FilmClick";
             Load += FilmClick_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pb_Poster).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
+        private PictureBox pb_Poster;
         private Label lbl_Judul;
         private Label lbl_Kategori;
         private Label lbl_Durasi;
-        private Button button1;
-        private Button button2;
+        private Button btn_Pesan;
+        private Button btn_Tutup;
         private Label lbl_Harga;
     }
 }

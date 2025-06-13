@@ -72,7 +72,6 @@
             lblJudul.Size = new Size(168, 57);
             lblJudul.TabIndex = 1;
             lblJudul.Text = " Judul     ";
-            lblJudul.Click += lblJudul_Click;
             // 
             // pbGambarFilm
             // 
@@ -83,7 +82,6 @@
             pbGambarFilm.SizeMode = PictureBoxSizeMode.StretchImage;
             pbGambarFilm.TabIndex = 0;
             pbGambarFilm.TabStop = false;
-            pbGambarFilm.Click += pbGambarFilm_Click;
             // 
             // CardFilm
             // 

@@ -33,14 +33,25 @@ namespace MovieLand.Views
             int maxPerRow = 4;
             int counter = 0;
 
-
-
             foreach (var film in filmList)
             {
                 string path = Path.Combine(Application.StartupPath, "Images", $"{film.gambar}");
 
                 CardFilm card = new CardFilm();
                 card.SetData(film.judul, path); // gambar = path
+
+                // ✅ Tangani event FilmClicked DI SINI
+                card.FilmClicked += (s, judulFilm) =>
+                {
+                    FilmController controller = new FilmController();
+                    var filmDetail = controller.GetFilmbyID(judulFilm);
+                    if (filmDetail != null)
+                    {
+                        FilmClick filmClickForm = new FilmClick(filmDetail);
+                        filmClickForm.Show();
+                    }
+                };
+
                 card.Size = new Size(202, 345);
                 card.Location = new Point(x, y);
 
@@ -56,5 +67,6 @@ namespace MovieLand.Views
                 }
             }
         }
+
     }
 }
