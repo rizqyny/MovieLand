@@ -11,9 +11,4 @@ namespace MovieLand
     {
         public static string LoggedInUsername { get; set; }
     }
-
-    public static class Session
-    {
-        public static CustomerModel CurrentUser { get; set; }
-    }
 }

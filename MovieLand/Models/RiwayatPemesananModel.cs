@@ -10,7 +10,6 @@ namespace MovieLand.Models
     {
         public string gambar { get; set; }
         public string judul { get; set; }
-        public string jam_tayang { get; set; }
         public int harga { get; set; }
         public int nomor_kursi { get; set; }
     }
