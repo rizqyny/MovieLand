@@ -41,8 +41,10 @@ namespace MovieLand.Views
 
         private void btn_Pesan_Click(object sender, EventArgs e)
         {
-            Kursi kursi = new Kursi();
-            kursi.Show();
+            int idCustomer = 1; // Gantilah dengan data user yang sedang login
+            Kursi kursiForm = new Kursi(_film.id_film, idCustomer);
+            kursiForm.Show();
+            //this.Close(); Tutup form film jika perlu
         }
 
         private void btn_Tutup_Click(object sender, EventArgs e)

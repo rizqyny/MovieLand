@@ -13,46 +13,49 @@ namespace MovieLand.Views
 {
     public partial class Kursi : Form
     {
-        public Kursi()
+        private int _idFilm;
+        private int _idCustomer;
+
+        public Kursi(int idFilm, int idCustomer)
         {
             InitializeComponent();
+            _idFilm = idFilm;
+            _idCustomer = idCustomer;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (comboBox1.SelectedItem == null)
+            {
+                MessageBox.Show("Pilih kursi terlebih dahulu!");
+                return;
+            }
 
+            int nomorKursi = Convert.ToInt32(comboBox1.SelectedItem);
+
+            Transaksi transaksi = new Transaksi(_idCustomer, _idFilm, nomorKursi);
+            transaksi.Show();
+            //this.Close(); // optional: untuk menutup form kursi setelah lanjut
         }
 
         private void Kursi_Load(object sender, EventArgs e)
         {
-            LoadKursiTersedia();
-        }
-
-        private void LoadKursiTersedia()
-        {
-            try
+            using (var conn = Database.GetConnection())
             {
-                using (var conn = Database.GetConnection())
+                conn.Open();
+                string query = "SELECT nomor_kursi FROM kursi WHERE status = 'Tersedia'";
+                using (var cmd = new NpgsqlCommand(query, conn))
+                using (var reader = cmd.ExecuteReader())
                 {
-                    conn.Open();
-                    string query = "SELECT nomor_kursi FROM kursi WHERE status = 'Tersedia' ORDER BY nomor_kursi";
-
-                    using (var cmd = new NpgsqlCommand(query, conn))
-                    using (var reader = cmd.ExecuteReader())
+                    while (reader.Read())
                     {
-                        while (reader.Read())
-                        {
-                            int nomorKursi = reader.GetInt32(0);
-                            comboBox1.Items.Add(nomorKursi);
-                        }
+                        comboBox1.Items.Add(reader.GetInt32(0));
                     }
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Gagal memuat kursi: " + ex.Message);
-            }
         }
+
+ 
 
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
