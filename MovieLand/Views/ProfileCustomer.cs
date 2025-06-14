@@ -78,5 +78,11 @@ namespace MovieLand.Views
             EditDataCustomer editDataCustomer = new EditDataCustomer();
             editDataCustomer.Show();
         }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            EditDataCustomer editDataCustomer = new EditDataCustomer();
+            editDataCustomer.Show();
+        }
     }
 }

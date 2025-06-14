@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfileCustomer));
             lblProfile = new Label();
             lblNama = new Label();
             lblEmail = new Label();
@@ -39,7 +40,7 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            button1 = new Button();
+            btnEdit = new Button();
             SuspendLayout();
             // 
             // lblProfile
@@ -48,15 +49,14 @@
             lblProfile.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblProfile.Location = new Point(264, 50);
             lblProfile.Name = "lblProfile";
-            lblProfile.Size = new Size(221, 81);
+            lblProfile.Size = new Size(0, 81);
             lblProfile.TabIndex = 2;
-            lblProfile.Text = "Profile";
             // 
             // lblNama
             // 
             lblNama.AutoSize = true;
             lblNama.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblNama.Location = new Point(286, 307);
+            lblNama.Location = new Point(344, 307);
             lblNama.Name = "lblNama";
             lblNama.Size = new Size(86, 28);
             lblNama.TabIndex = 3;
@@ -67,7 +67,7 @@
             // 
             lblEmail.AutoSize = true;
             lblEmail.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblEmail.Location = new Point(286, 390);
+            lblEmail.Location = new Point(344, 421);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(81, 28);
             lblEmail.TabIndex = 4;
@@ -78,7 +78,7 @@
             // 
             lblUsername.AutoSize = true;
             lblUsername.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblUsername.Location = new Point(286, 570);
+            lblUsername.Location = new Point(727, 307);
             lblUsername.Name = "lblUsername";
             lblUsername.Size = new Size(121, 28);
             lblUsername.TabIndex = 5;
@@ -89,7 +89,7 @@
             // 
             lblAlamat.AutoSize = true;
             lblAlamat.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblAlamat.Location = new Point(286, 477);
+            lblAlamat.Location = new Point(344, 534);
             lblAlamat.Name = "lblAlamat";
             lblAlamat.Size = new Size(96, 28);
             lblAlamat.TabIndex = 6;
@@ -100,7 +100,7 @@
             // 
             lblPassword.AutoSize = true;
             lblPassword.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblPassword.Location = new Point(286, 663);
+            lblPassword.Location = new Point(727, 421);
             lblPassword.Name = "lblPassword";
             lblPassword.Size = new Size(115, 28);
             lblPassword.TabIndex = 7;
@@ -111,7 +111,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(286, 279);
+            label1.Location = new Point(344, 279);
             label1.Name = "label1";
             label1.Size = new Size(73, 28);
             label1.TabIndex = 8;
@@ -121,7 +121,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(286, 362);
+            label2.Location = new Point(344, 393);
             label2.Name = "label2";
             label2.Size = new Size(68, 28);
             label2.TabIndex = 9;
@@ -131,7 +131,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(286, 449);
+            label3.Location = new Point(344, 506);
             label3.Name = "label3";
             label3.Size = new Size(83, 28);
             label3.TabIndex = 10;
@@ -141,7 +141,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(286, 542);
+            label4.Location = new Point(727, 279);
             label4.Name = "label4";
             label4.Size = new Size(108, 28);
             label4.TabIndex = 11;
@@ -151,28 +151,32 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(286, 635);
+            label5.Location = new Point(727, 393);
             label5.Name = "label5";
             label5.Size = new Size(102, 28);
             label5.TabIndex = 12;
             label5.Text = "Password :";
             // 
-            // button1
+            // btnEdit
             // 
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(820, 301);
-            button1.Name = "button1";
-            button1.Size = new Size(126, 57);
-            button1.TabIndex = 13;
-            button1.Text = "Edit Data";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnEdit.BackColor = Color.White;
+            btnEdit.BackgroundImage = (Image)resources.GetObject("btnEdit.BackgroundImage");
+            btnEdit.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEdit.ForeColor = Color.White;
+            btnEdit.Location = new Point(727, 617);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(196, 46);
+            btnEdit.TabIndex = 14;
+            btnEdit.Text = "Edit Data";
+            btnEdit.UseVisualStyleBackColor = false;
+            btnEdit.Click += btnEdit_Click;
             // 
             // ProfileCustomer
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(button1);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            Controls.Add(btnEdit);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -204,6 +208,6 @@
         private Label label3;
         private Label label4;
         private Label label5;
-        private Button button1;
+        private Button btnEdit;
     }
 }

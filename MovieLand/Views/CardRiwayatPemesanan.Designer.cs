@@ -32,18 +32,17 @@
             pbGambarFilm = new PictureBox();
             lblJudul = new Label();
             lblNomorKursi = new Label();
-            label1 = new Label();
-            label2 = new Label();
             lblHarga = new Label();
+            lblWaktu = new Label();
             ((System.ComponentModel.ISupportInitialize)pbGambarFilm).BeginInit();
             SuspendLayout();
             // 
             // pbGambarFilm
             // 
             pbGambarFilm.BackgroundImage = (Image)resources.GetObject("pbGambarFilm.BackgroundImage");
-            pbGambarFilm.Location = new Point(12, 33);
+            pbGambarFilm.Location = new Point(12, 11);
             pbGambarFilm.Name = "pbGambarFilm";
-            pbGambarFilm.Size = new Size(65, 83);
+            pbGambarFilm.Size = new Size(65, 86);
             pbGambarFilm.SizeMode = PictureBoxSizeMode.CenterImage;
             pbGambarFilm.TabIndex = 0;
             pbGambarFilm.TabStop = false;
@@ -51,10 +50,10 @@
             // lblJudul
             // 
             lblJudul.AutoSize = true;
-            lblJudul.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblJudul.Location = new Point(95, 56);
+            lblJudul.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblJudul.Location = new Point(95, 20);
             lblJudul.Name = "lblJudul";
-            lblJudul.Size = new Size(88, 23);
+            lblJudul.Size = new Size(105, 28);
             lblJudul.TabIndex = 1;
             lblJudul.Text = "Judul Film";
             // 
@@ -62,54 +61,43 @@
             // 
             lblNomorKursi.AutoSize = true;
             lblNomorKursi.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblNomorKursi.Location = new Point(348, 42);
+            lblNomorKursi.Location = new Point(264, 24);
             lblNomorKursi.Name = "lblNomorKursi";
-            lblNomorKursi.Size = new Size(17, 23);
+            lblNomorKursi.Size = new Size(126, 23);
             lblNomorKursi.TabIndex = 3;
-            lblNomorKursi.Text = "1";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(229, 42);
-            label1.Name = "label1";
-            label1.Size = new Size(114, 23);
-            label1.TabIndex = 4;
-            label1.Text = "Nomor kursi :";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(229, 75);
-            label2.Name = "label2";
-            label2.Size = new Size(40, 23);
-            label2.TabIndex = 5;
-            label2.Text = "Rp :";
+            lblNomorKursi.Text = "Nomor kursi : 1";
             // 
             // lblHarga
             // 
             lblHarga.AutoSize = true;
             lblHarga.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblHarga.Location = new Point(270, 75);
+            lblHarga.Location = new Point(264, 58);
             lblHarga.Name = "lblHarga";
-            lblHarga.Size = new Size(53, 23);
+            lblHarga.Size = new Size(79, 23);
             lblHarga.TabIndex = 6;
-            lblHarga.Text = "10000";
+            lblHarga.Text = "Rp 10000";
+            // 
+            // lblWaktu
+            // 
+            lblWaktu.AutoSize = true;
+            lblWaktu.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblWaktu.Location = new Point(95, 58);
+            lblWaktu.Name = "lblWaktu";
+            lblWaktu.Size = new Size(153, 23);
+            lblWaktu.TabIndex = 7;
+            lblWaktu.Text = "00-00-0000 (00:00)";
             // 
             // CardRiwayatPemesanan
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(lblWaktu);
             Controls.Add(lblHarga);
-            Controls.Add(label2);
-            Controls.Add(label1);
             Controls.Add(lblNomorKursi);
             Controls.Add(lblJudul);
             Controls.Add(pbGambarFilm);
             Name = "CardRiwayatPemesanan";
-            Size = new Size(374, 128);
+            Size = new Size(406, 108);
             Load += CardRiwayatPemesanan_Load;
             ((System.ComponentModel.ISupportInitialize)pbGambarFilm).EndInit();
             ResumeLayout(false);
@@ -121,8 +109,7 @@
         private PictureBox pbGambarFilm;
         private Label lblJudul;
         private Label lblNomorKursi;
-        private Label label1;
-        private Label label2;
         private Label lblHarga;
+        private Label lblWaktu;
     }
 }

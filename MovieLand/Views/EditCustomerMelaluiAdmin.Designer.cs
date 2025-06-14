@@ -39,11 +39,13 @@
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
+            label3 = new Label();
+            btnBatal = new Button();
             SuspendLayout();
             // 
             // btnSimpan
             // 
-            btnSimpan.Location = new Point(620, 85);
+            btnSimpan.Location = new Point(578, 396);
             btnSimpan.Name = "btnSimpan";
             btnSimpan.Size = new Size(94, 29);
             btnSimpan.TabIndex = 0;
@@ -53,35 +55,36 @@
             // 
             // txtNama
             // 
-            txtNama.Location = new Point(184, 162);
+            txtNama.Location = new Point(95, 171);
             txtNama.Name = "txtNama";
             txtNama.Size = new Size(301, 27);
             txtNama.TabIndex = 1;
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(184, 275);
+            txtEmail.Location = new Point(95, 284);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(301, 27);
             txtEmail.TabIndex = 2;
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(184, 381);
+            txtUsername.Location = new Point(578, 171);
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(301, 27);
             txtUsername.TabIndex = 3;
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(184, 483);
+            txtPassword.Location = new Point(578, 284);
             txtPassword.Name = "txtPassword";
             txtPassword.Size = new Size(301, 27);
             txtPassword.TabIndex = 4;
+            txtPassword.TextChanged += txtPassword_TextChanged;
             // 
             // txtAlamat
             // 
-            txtAlamat.Location = new Point(184, 595);
+            txtAlamat.Location = new Point(95, 398);
             txtAlamat.Name = "txtAlamat";
             txtAlamat.Size = new Size(301, 27);
             txtAlamat.TabIndex = 5;
@@ -89,7 +92,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(184, 139);
+            label1.Location = new Point(95, 148);
             label1.Name = "label1";
             label1.Size = new Size(49, 20);
             label1.TabIndex = 6;
@@ -98,7 +101,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(184, 252);
+            label2.Location = new Point(95, 261);
             label2.Name = "label2";
             label2.Size = new Size(46, 20);
             label2.TabIndex = 7;
@@ -107,7 +110,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(184, 572);
+            label4.Location = new Point(95, 375);
             label4.Name = "label4";
             label4.Size = new Size(57, 20);
             label4.TabIndex = 9;
@@ -116,7 +119,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(184, 460);
+            label5.Location = new Point(578, 261);
             label5.Name = "label5";
             label5.Size = new Size(70, 20);
             label5.TabIndex = 10;
@@ -125,17 +128,39 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(184, 358);
+            label6.Location = new Point(578, 148);
             label6.Name = "label6";
             label6.Size = new Size(75, 20);
             label6.TabIndex = 11;
             label6.Text = "Username";
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(95, 62);
+            label3.Name = "label3";
+            label3.Size = new Size(312, 50);
+            label3.TabIndex = 12;
+            label3.Text = "EDIT CUSTOMER";
+            // 
+            // btnBatal
+            // 
+            btnBatal.Location = new Point(785, 396);
+            btnBatal.Name = "btnBatal";
+            btnBatal.Size = new Size(94, 29);
+            btnBatal.TabIndex = 13;
+            btnBatal.Text = "Batal";
+            btnBatal.UseVisualStyleBackColor = true;
+            btnBatal.Click += btnBatal_Click;
+            // 
             // EditCustomerMelaluiAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1136, 816);
+            ClientSize = new Size(982, 503);
+            Controls.Add(btnBatal);
+            Controls.Add(label3);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -148,6 +173,7 @@
             Controls.Add(txtNama);
             Controls.Add(btnSimpan);
             Name = "EditCustomerMelaluiAdmin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "EditCustomerMelaluiAdmin";
             Load += EditCustomerMelaluiAdmin_Load;
             ResumeLayout(false);
@@ -167,5 +193,7 @@
         private Label label4;
         private Label label5;
         private Label label6;
+        private Label label3;
+        private Button btnBatal;
     }
 }
