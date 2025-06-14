@@ -40,6 +40,7 @@
             tbAlamat = new TextBox();
             btnSimpan = new Button();
             label6 = new Label();
+            btnBatal = new Button();
             SuspendLayout();
             // 
             // tbNama
@@ -148,11 +149,23 @@
             label6.TabIndex = 11;
             label6.Text = "EDIT PROFILE";
             // 
+            // btnBatal
+            // 
+            btnBatal.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBatal.Location = new Point(808, 382);
+            btnBatal.Name = "btnBatal";
+            btnBatal.Size = new Size(104, 55);
+            btnBatal.TabIndex = 12;
+            btnBatal.Text = "Batal";
+            btnBatal.UseVisualStyleBackColor = true;
+            btnBatal.Click += btnBatal_Click;
+            // 
             // EditDataCustomer
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(982, 503);
+            Controls.Add(btnBatal);
             Controls.Add(label6);
             Controls.Add(btnSimpan);
             Controls.Add(tbAlamat);
@@ -187,5 +200,6 @@
         private TextBox tbAlamat;
         private Button btnSimpan;
         private Label label6;
+        private Button btnBatal;
     }
 }

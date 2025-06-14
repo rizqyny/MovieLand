@@ -40,6 +40,7 @@
             label5 = new Label();
             label6 = new Label();
             label3 = new Label();
+            btnBatal = new Button();
             SuspendLayout();
             // 
             // btnSimpan
@@ -72,7 +73,6 @@
             txtUsername.Name = "txtUsername";
             txtUsername.Size = new Size(301, 27);
             txtUsername.TabIndex = 3;
-            
             // 
             // txtPassword
             // 
@@ -124,7 +124,6 @@
             label5.Size = new Size(70, 20);
             label5.TabIndex = 10;
             label5.Text = "Password";
-            
             // 
             // label6
             // 
@@ -134,7 +133,6 @@
             label6.Size = new Size(75, 20);
             label6.TabIndex = 11;
             label6.Text = "Username";
-            
             // 
             // label3
             // 
@@ -146,11 +144,22 @@
             label3.TabIndex = 12;
             label3.Text = "EDIT CUSTOMER";
             // 
+            // btnBatal
+            // 
+            btnBatal.Location = new Point(785, 396);
+            btnBatal.Name = "btnBatal";
+            btnBatal.Size = new Size(94, 29);
+            btnBatal.TabIndex = 13;
+            btnBatal.Text = "Batal";
+            btnBatal.UseVisualStyleBackColor = true;
+            btnBatal.Click += btnBatal_Click;
+            // 
             // EditCustomerMelaluiAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(982, 503);
+            Controls.Add(btnBatal);
             Controls.Add(label3);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -185,5 +194,6 @@
         private Label label5;
         private Label label6;
         private Label label3;
+        private Button btnBatal;
     }
 }
