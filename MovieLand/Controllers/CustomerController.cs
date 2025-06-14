@@ -56,6 +56,15 @@ namespace MovieLand.Controllers
             }
         }
 
+        public bool DeleteCustomer(int id)
+        {
+            using var conn = Database.GetConnection();
+            conn.Open();
+            string sql = "DELETE FROM customer WHERE id_customer = @id";
+            using var cmd = new NpgsqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@id", id);
+            return cmd.ExecuteNonQuery() > 0;
+        }
 
         public bool UpdateCustomerData(string username, CustomerModel updatedData)
         {
@@ -76,6 +85,21 @@ namespace MovieLand.Controllers
             cmd.Parameters.AddWithValue("@password", updatedData.password);
             cmd.Parameters.AddWithValue("@username", username);
 
+            return cmd.ExecuteNonQuery() > 0;
+        }
+
+        public bool UpdateCustomer(CustomerModel customer)
+        {
+            using var conn = Database.GetConnection();
+            conn.Open();
+            string sql = "UPDATE customer SET username = @username, password = @password, email = @email, nama_lengkap = @nama_lengkap, alamat = @alamat WHERE id_customer = @id";
+            using var cmd = new NpgsqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@username", customer.username);
+            cmd.Parameters.AddWithValue("@password", customer.password);
+            cmd.Parameters.AddWithValue("@email", customer.email);
+            cmd.Parameters.AddWithValue("@nama_lengkap", customer.nama_lengkap);
+            cmd.Parameters.AddWithValue("@alamat", customer.alamat);
+            cmd.Parameters.AddWithValue("@id", customer.id_customer);
             return cmd.ExecuteNonQuery() > 0;
         }
 
