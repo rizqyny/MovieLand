@@ -51,5 +51,10 @@ namespace MovieLand.Views
         {
 
         }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
