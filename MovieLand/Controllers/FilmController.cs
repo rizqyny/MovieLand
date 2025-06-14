@@ -19,9 +19,9 @@ namespace MovieLand.Controllers
             {
                 conn.Open();
                 string query = @"
-                SELECT f.id_film, f.judul, f.durasi, f.deskripsi, f.harga, f.gambar, k.nama_kategori
-                FROM film f
-                JOIN kategori k ON f.id_kategori = k.id_kategori ORDER BY f.id_film
+                SELECT *
+                FROM film
+            
                 ";
                 using (var cmd = new NpgsqlCommand(query, conn))
                 {
@@ -37,7 +37,7 @@ namespace MovieLand.Controllers
                                 deskripsi = reader.GetString(3),
                                 harga = reader.GetInt32(4),
                                 gambar = reader.GetString(5),
-                                nama_kategori = reader.GetString(6)
+                                id_kategori = reader.GetInt32(6)
                             };
                             filmModel.Add(film);
                         }
@@ -93,9 +93,15 @@ namespace MovieLand.Controllers
             using var conn = Database.GetConnection();
             conn.Open();
             string sql = @"
-            UPDATE film 
-            SET judul = @judul, durasi = @durasi, deskripsi = @deskripsi, harga = @harga, gambar = @gambar, id_kategori = (SELECT id_kategori FROM kategori WHERE nama_kategori = @nama_kategori)
-            WHERE id_film = @id_film";
+    UPDATE film 
+    SET judul = @judul, 
+        durasi = @durasi, 
+        deskripsi = @deskripsi, 
+        harga = @harga, 
+        gambar = @gambar, 
+        id_kategori = @id_kategori
+    WHERE id_film = @id_film";
+
             using var cmd = new NpgsqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@id_film", film.id_film);
             cmd.Parameters.AddWithValue("@judul", film.judul);
@@ -103,7 +109,27 @@ namespace MovieLand.Controllers
             cmd.Parameters.AddWithValue("@deskripsi", film.deskripsi);
             cmd.Parameters.AddWithValue("@harga", film.harga);
             cmd.Parameters.AddWithValue("@gambar", film.gambar);
-            cmd.Parameters.AddWithValue("@nama_kategori", film.nama_kategori);
+            cmd.Parameters.AddWithValue("@id_kategori", film.id_kategori);
+
+            return cmd.ExecuteNonQuery() > 0;
+        }
+        public bool TambahFilm(FilmModel film)
+        {
+            using var conn = Database.GetConnection();
+            conn.Open();
+
+            string sql = @"
+        INSERT INTO film (judul, durasi, deskripsi, harga, gambar, id_kategori)
+        VALUES (@judul, @durasi, @deskripsi, @harga, @gambar, @id_kategori)";
+
+            using var cmd = new NpgsqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@judul", film.judul);
+            cmd.Parameters.AddWithValue("@durasi", film.durasi);
+            cmd.Parameters.AddWithValue("@deskripsi", film.deskripsi);
+            cmd.Parameters.AddWithValue("@harga", film.harga);
+            cmd.Parameters.AddWithValue("@gambar", film.gambar);
+            cmd.Parameters.AddWithValue("@id_kategori", film.id_kategori);
+
             return cmd.ExecuteNonQuery() > 0;
         }
     }

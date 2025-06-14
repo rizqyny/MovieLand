@@ -28,35 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            tbJudul = new TextBox();
+            tbDurasi = new TextBox();
             label1 = new Label();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
+            tbDeskripsi = new TextBox();
+            tbHarga = new TextBox();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            textBox5 = new TextBox();
+            tbGambar = new TextBox();
             label6 = new Label();
-            textBox6 = new TextBox();
+            tbKategori = new TextBox();
             btnSimpan = new Button();
             btnBatal = new Button();
             SuspendLayout();
             // 
-            // textBox1
+            // tbJudul
             // 
-            textBox1.Location = new Point(114, 31);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(125, 27);
-            textBox1.TabIndex = 0;
+            tbJudul.Location = new Point(114, 31);
+            tbJudul.Name = "tbJudul";
+            tbJudul.Size = new Size(125, 27);
+            tbJudul.TabIndex = 0;
             // 
-            // textBox2
+            // tbDurasi
             // 
-            textBox2.Location = new Point(114, 81);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
-            textBox2.TabIndex = 1;
+            tbDurasi.Location = new Point(114, 81);
+            tbDurasi.Name = "tbDurasi";
+            tbDurasi.Size = new Size(125, 27);
+            tbDurasi.TabIndex = 1;
             // 
             // label1
             // 
@@ -67,19 +67,19 @@
             label1.TabIndex = 2;
             label1.Text = "Judul:";
             // 
-            // textBox3
+            // tbDeskripsi
             // 
-            textBox3.Location = new Point(114, 131);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(816, 27);
-            textBox3.TabIndex = 3;
+            tbDeskripsi.Location = new Point(114, 131);
+            tbDeskripsi.Name = "tbDeskripsi";
+            tbDeskripsi.Size = new Size(816, 27);
+            tbDeskripsi.TabIndex = 3;
             // 
-            // textBox4
+            // tbHarga
             // 
-            textBox4.Location = new Point(114, 212);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(125, 27);
-            textBox4.TabIndex = 4;
+            tbHarga.Location = new Point(114, 212);
+            tbHarga.Name = "tbHarga";
+            tbHarga.Size = new Size(125, 27);
+            tbHarga.TabIndex = 4;
             // 
             // label2
             // 
@@ -117,12 +117,12 @@
             label5.TabIndex = 9;
             label5.Text = "Gambar:";
             // 
-            // textBox5
+            // tbGambar
             // 
-            textBox5.Location = new Point(114, 261);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(125, 27);
-            textBox5.TabIndex = 8;
+            tbGambar.Location = new Point(114, 261);
+            tbGambar.Name = "tbGambar";
+            tbGambar.Size = new Size(125, 27);
+            tbGambar.TabIndex = 8;
             // 
             // label6
             // 
@@ -133,12 +133,12 @@
             label6.TabIndex = 11;
             label6.Text = "Kategori:";
             // 
-            // textBox6
+            // tbKategori
             // 
-            textBox6.Location = new Point(114, 309);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(125, 27);
-            textBox6.TabIndex = 10;
+            tbKategori.Location = new Point(114, 309);
+            tbKategori.Name = "tbKategori";
+            tbKategori.Size = new Size(125, 27);
+            tbKategori.TabIndex = 10;
             // 
             // btnSimpan
             // 
@@ -148,7 +148,7 @@
             btnSimpan.TabIndex = 12;
             btnSimpan.Text = "Simpan";
             btnSimpan.UseVisualStyleBackColor = true;
-            btnSimpan.Click += this.btnSimpan_Click;
+            btnSimpan.Click += btnSimpan_Click;
             // 
             // btnBatal
             // 
@@ -158,7 +158,7 @@
             btnBatal.TabIndex = 13;
             btnBatal.Text = "Batal";
             btnBatal.UseVisualStyleBackColor = true;
-            btnBatal.Click += this.btnBatal_Click;
+            btnBatal.Click += btnBatal_Click;
             // 
             // EditFilm
             // 
@@ -168,39 +168,39 @@
             Controls.Add(btnBatal);
             Controls.Add(btnSimpan);
             Controls.Add(label6);
-            Controls.Add(textBox6);
+            Controls.Add(tbKategori);
             Controls.Add(label5);
-            Controls.Add(textBox5);
+            Controls.Add(tbGambar);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(textBox4);
-            Controls.Add(textBox3);
+            Controls.Add(tbHarga);
+            Controls.Add(tbDeskripsi);
             Controls.Add(label1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(tbDurasi);
+            Controls.Add(tbJudul);
             Name = "EditFilm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Edit";
-            Load += this.EditFilm_Load;
+            Load += EditFilm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox tbJudul;
+        private TextBox tbDurasi;
         private Label label1;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox tbDeskripsi;
+        private TextBox tbHarga;
         private Label label2;
         private Label label3;
         private Label label4;
         private Label label5;
-        private TextBox textBox5;
+        private TextBox tbGambar;
         private Label label6;
-        private TextBox textBox6;
+        private TextBox tbKategori;
         private Button btnSimpan;
         private Button btnBatal;
     }

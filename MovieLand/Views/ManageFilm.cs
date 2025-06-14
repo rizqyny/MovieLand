@@ -29,40 +29,26 @@ namespace MovieLand.Views
             dgvFilm.Columns["deskripsi"].HeaderText = "Deskripsi";
             dgvFilm.Columns["harga"].HeaderText = "Harga";
             dgvFilm.Columns["gambar"].HeaderText = "Path Gambar";
-            dgvFilm.Columns["nama_kategori"].HeaderText = "Kategori";
-
-            //if (!dgvFilm.Columns.Contains("Edit"))
-            //{
-            //    DataGridViewButtonColumn btnedit = new DataGridViewButtonColumn();
-            //    btnedit.Text = "Edit";
-            //    btnedit.Name = "Edit";
-            //    btnedit.HeaderText = "Edit";
-            //    btnedit.UseColumnTextForButtonValue = true;
-
-            //    dgvFilm.Columns.Add(btnedit);
-            //}
-
-            //if (!dgvFilm.Columns.Contains("Hapus"))
-            //{
-            //    DataGridViewButtonColumn btnedit = new DataGridViewButtonColumn();
-            //    btnedit.Text = "Hapus";
-            //    btnedit.Name = "Hapus";
-            //    btnedit.HeaderText = "Hapus";
-            //    btnedit.UseColumnTextForButtonValue = true;
-
-            //    dgvFilm.Columns.Add(btnedit);
-
+            dgvFilm.Columns["id_kategori"].HeaderText = "Kategori";
+            dgvFilm.Columns["nama_kategori"].Visible = false;
         }
 
         private void btnTambahFilm_Click(object sender, EventArgs e)
         {
             TambahFilm tambahFilmForm = new TambahFilm();
             tambahFilmForm.ShowDialog();
+
+            // Refresh setelah tambah
+            dgvFilm.DataSource = null;
+            dgvFilm.Columns.Clear(); // Hapus semua kolom sebelumnya
+            dgvFilm.AutoGenerateColumns = true;
+            dgvFilm.DataSource = FilmController.GetAllFilm();
+
         }
 
         private void dgvFilm_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            // (Kosongkan atau isi jika pakai tombol edit/hapus di grid)
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -70,7 +56,7 @@ namespace MovieLand.Views
             if (dgvFilm.SelectedRows.Count > 0)
             {
                 var selectedRow = dgvFilm.SelectedRows[0];
-                int id = Convert.ToInt32(selectedRow.Cells["id_film"].Value);
+                int id = Convert.ToInt32(selectedRow.Cells["id_film"].Value.ToString());
 
                 DialogResult result = MessageBox.Show("Yakin ingin menghapus film ini?", "Konfirmasi", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
@@ -79,25 +65,56 @@ namespace MovieLand.Views
                     bool success = controller.DeleteFilm(id);
                     if (success)
                     {
-                        MessageBox.Show("Customer berhasil dihapus.");
+                        MessageBox.Show("Film berhasil dihapus.");
                         dgvFilm.DataSource = FilmController.GetAllFilm();
                     }
                     else
                     {
-                        MessageBox.Show("Gagal menghapus customer.");
+                        MessageBox.Show("Gagal menghapus film.");
                     }
                 }
             }
             else
             {
-                MessageBox.Show("Silakan pilih data yang ingin dihapus.");
+                MessageBox.Show("Silakan pilih data film yang ingin dihapus.");
             }
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            EditFilm editFilmForm = new EditFilm();
-            editFilmForm.ShowDialog();
+            if (dgvFilm.SelectedRows.Count > 0)
+            {
+                var selectedRow = dgvFilm.SelectedRows[0];
+
+                FilmModel selectedFilm = new FilmModel
+                {
+                    id_film = Convert.ToInt32(selectedRow.Cells["id_film"].Value),
+                    judul = selectedRow.Cells["judul"].Value.ToString(),
+                    durasi = Convert.ToInt32(selectedRow.Cells["durasi"].Value),
+                    deskripsi = selectedRow.Cells["deskripsi"].Value.ToString(),
+                    harga = Convert.ToInt32(selectedRow.Cells["harga"].Value),
+                    gambar = selectedRow.Cells["gambar"].Value.ToString()
+                };
+
+                // Penanganan aman untuk id_kategori
+                int.TryParse(selectedRow.Cells["id_kategori"].Value?.ToString(), out int idKategori);
+                selectedFilm.id_kategori = idKategori;
+
+                var editFilmForm = new EditFilm(selectedFilm);
+                editFilmForm.ShowDialog();
+
+                // Refresh
+                dgvFilm.DataSource = null;
+                dgvFilm.Columns.Clear();
+                dgvFilm.AutoGenerateColumns = true;
+                dgvFilm.DataSource = FilmController.GetAllFilm();
+            }
+            else
+            {
+                MessageBox.Show("Silakan pilih data film yang ingin diedit.");
+            }
         }
+
+
     }
 }
