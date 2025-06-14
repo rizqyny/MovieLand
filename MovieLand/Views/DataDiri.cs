@@ -50,9 +50,10 @@ namespace MovieLand.Views
             if (controller.InsertDataDiri(customer, LoggedInUsername))
             {
                 MessageBox.Show("Data diri berhasil disimpan.");
-                DashboardCustomer dashboard = new DashboardCustomer();
-                dashboard.Show();
-                this.Hide();
+                DashboardCustomerForm dashboardForm = new DashboardCustomerForm();
+                dashboardForm.Show();
+                //DashboardCustomer dashboard = new DashboardCustomer();
+                //dashboard.Show();
             }
             else
             {
