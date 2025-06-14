@@ -30,6 +30,8 @@
         {
             lblDataCustomer = new Label();
             dgvCustomer = new DataGridView();
+            btnEdit = new Button();
+            btnHapus = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvCustomer).BeginInit();
             SuspendLayout();
             // 
@@ -53,11 +55,34 @@
             dgvCustomer.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dgvCustomer.Size = new Size(1043, 633);
             dgvCustomer.TabIndex = 3;
+            dgvCustomer.CellContentClick += dgvCustomer_CellContentClick;
+            // 
+            // btnEdit
+            // 
+            btnEdit.Location = new Point(846, 832);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(94, 29);
+            btnEdit.TabIndex = 4;
+            btnEdit.Text = "Edit";
+            btnEdit.UseVisualStyleBackColor = true;
+            btnEdit.Click += btnEdit_Click;
+            // 
+            // btnHapus
+            // 
+            btnHapus.Location = new Point(1126, 832);
+            btnHapus.Name = "btnHapus";
+            btnHapus.Size = new Size(94, 29);
+            btnHapus.TabIndex = 5;
+            btnHapus.Text = "Hapus";
+            btnHapus.UseVisualStyleBackColor = true;
+            btnHapus.Click += btnHapus_Click;
             // 
             // ManageCustomer
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(btnHapus);
+            Controls.Add(btnEdit);
             Controls.Add(dgvCustomer);
             Controls.Add(lblDataCustomer);
             Name = "ManageCustomer";
@@ -72,5 +97,7 @@
 
         private Label lblDataCustomer;
         private DataGridView dgvCustomer;
+        private Button btnEdit;
+        private Button btnHapus;
     }
 }

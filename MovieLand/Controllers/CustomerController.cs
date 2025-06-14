@@ -56,15 +56,16 @@ namespace MovieLand.Controllers
             }
         }
 
-        public bool DeleteCustomer(int id)
+        public bool DeleteCustomer(int idCustomer)
         {
             using var conn = Database.GetConnection();
             conn.Open();
             string sql = "DELETE FROM customer WHERE id_customer = @id";
             using var cmd = new NpgsqlCommand(sql, conn);
-            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@id", idCustomer);
             return cmd.ExecuteNonQuery() > 0;
         }
+
 
         public bool UpdateCustomerData(string username, CustomerModel updatedData)
         {
