@@ -29,7 +29,7 @@ namespace MovieLand.Views
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-
+            
             string username = tb_Username.Text.Trim();
             string password = tb_Password.Text.Trim();
 
@@ -42,6 +42,13 @@ namespace MovieLand.Views
             string connString = "Host=localhost;Username=postgres;Password=123;Database=MovieLand";
             using (var conn = new NpgsqlConnection(connString))
             {
+                if (username == "admin" && password == "admin")
+                {
+                    MessageBox.Show("Login sebagai admin berhasil!");
+                    DashboardAdminForm adminDashboard = new DashboardAdminForm();
+                    adminDashboard.Show();
+                    return;
+                }
                 try
                 {
                     conn.Open();
