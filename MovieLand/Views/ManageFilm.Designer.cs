@@ -32,6 +32,8 @@
             lblDataFilm = new Label();
             dgvFilm = new DataGridView();
             btnTambahFilm = new Button();
+            btnEdit = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvFilm).BeginInit();
             SuspendLayout();
             // 
@@ -64,7 +66,7 @@
             btnTambahFilm.BackgroundImage = (Image)resources.GetObject("btnTambahFilm.BackgroundImage");
             btnTambahFilm.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnTambahFilm.ForeColor = Color.White;
-            btnTambahFilm.Location = new Point(597, 856);
+            btnTambahFilm.Location = new Point(557, 856);
             btnTambahFilm.Name = "btnTambahFilm";
             btnTambahFilm.Size = new Size(237, 61);
             btnTambahFilm.TabIndex = 3;
@@ -72,10 +74,40 @@
             btnTambahFilm.UseVisualStyleBackColor = false;
             btnTambahFilm.Click += btnTambahFilm_Click;
             // 
+            // btnEdit
+            // 
+            btnEdit.BackColor = Color.Black;
+            btnEdit.BackgroundImage = (Image)resources.GetObject("btnEdit.BackgroundImage");
+            btnEdit.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEdit.ForeColor = Color.White;
+            btnEdit.Location = new Point(800, 856);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(237, 61);
+            btnEdit.TabIndex = 4;
+            btnEdit.Text = "Edit Data Film";
+            btnEdit.UseVisualStyleBackColor = false;
+            btnEdit.Click += btnEdit_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Black;
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(1043, 856);
+            button1.Name = "button1";
+            button1.Size = new Size(237, 61);
+            button1.TabIndex = 5;
+            button1.Text = "Hapus Data Film";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // ManageFilm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(button1);
+            Controls.Add(btnEdit);
             Controls.Add(btnTambahFilm);
             Controls.Add(dgvFilm);
             Controls.Add(lblDataFilm);
@@ -93,5 +125,7 @@
         private Label lblDataFilm;
         private DataGridView dgvFilm;
         private Button btnTambahFilm;
+        private Button btnEdit;
+        private Button button1;
     }
 }

@@ -21,7 +21,7 @@ namespace MovieLand.Controllers
                 string query = @"
                 SELECT f.id_film, f.judul, f.durasi, f.deskripsi, f.harga, f.gambar, k.nama_kategori
                 FROM film f
-                JOIN kategori k ON f.id_kategori = k.id_kategori
+                JOIN kategori k ON f.id_kategori = k.id_kategori ORDER BY f.id_film
                 ";
                 using (var cmd = new NpgsqlCommand(query, conn))
                 {
@@ -52,10 +52,10 @@ namespace MovieLand.Controllers
             conn.Open();
 
             string sql = @"
-    SELECT f.id_film, f.judul, f.durasi, f.deskripsi, f.harga, f.gambar, kt.nama_kategori
-    FROM film f
-    JOIN kategori kt USING(id_kategori)
-    WHERE f.judul = @judul";
+            SELECT f.id_film, f.judul, f.durasi, f.deskripsi, f.harga, f.gambar, kt.nama_kategori
+            FROM film f
+            JOIN kategori kt USING(id_kategori)
+            WHERE f.judul = @judul";
             using var cmd = new NpgsqlCommand(sql, conn);
             cmd.Parameters.AddWithValue("@judul", judul);
 
@@ -76,6 +76,35 @@ namespace MovieLand.Controllers
 
             return null;
 
+        }
+
+        public bool DeleteFilm(int idFilm)
+        {
+            using var conn = Database.GetConnection();
+            conn.Open();
+            string sql = "DELETE FROM film WHERE id_film = @id";
+            using var cmd = new NpgsqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@id", idFilm);
+            return cmd.ExecuteNonQuery() > 0;
+        }
+
+        public bool UpdateFilm(FilmModel film)
+        {
+            using var conn = Database.GetConnection();
+            conn.Open();
+            string sql = @"
+            UPDATE film 
+            SET judul = @judul, durasi = @durasi, deskripsi = @deskripsi, harga = @harga, gambar = @gambar, id_kategori = (SELECT id_kategori FROM kategori WHERE nama_kategori = @nama_kategori)
+            WHERE id_film = @id_film";
+            using var cmd = new NpgsqlCommand(sql, conn);
+            cmd.Parameters.AddWithValue("@id_film", film.id_film);
+            cmd.Parameters.AddWithValue("@judul", film.judul);
+            cmd.Parameters.AddWithValue("@durasi", film.durasi);
+            cmd.Parameters.AddWithValue("@deskripsi", film.deskripsi);
+            cmd.Parameters.AddWithValue("@harga", film.harga);
+            cmd.Parameters.AddWithValue("@gambar", film.gambar);
+            cmd.Parameters.AddWithValue("@nama_kategori", film.nama_kategori);
+            return cmd.ExecuteNonQuery() > 0;
         }
     }
 }
