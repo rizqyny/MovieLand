@@ -56,6 +56,7 @@
             dgvFilm.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dgvFilm.Size = new Size(1103, 633);
             dgvFilm.TabIndex = 2;
+            dgvFilm.CellContentClick += dgvFilm_CellContentClick;
             // 
             // btnTambahFilm
             // 

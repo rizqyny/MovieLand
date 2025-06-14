@@ -57,5 +57,10 @@ namespace MovieLand.Views
         {
 
         }
+
+        private void dgvFilm_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
