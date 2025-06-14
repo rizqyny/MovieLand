@@ -40,25 +40,32 @@ namespace MovieLand.Views
         private void btnEdit_Click(object sender, EventArgs e)
         {
             if (dgvCustomer.SelectedRows.Count > 0)
-            {
-                var selectedRow = dgvCustomer.SelectedRows[0];
-
-                CustomerModel selectedCustomer = new CustomerModel
+            { 
+                if (dgvCustomer.SelectedRows.Count > 0)
                 {
-                    id_customer = Convert.ToInt32(selectedRow.Cells["id_customer"].Value),
-                    username = selectedRow.Cells["username"].Value.ToString(),
-                    password = selectedRow.Cells["password"].Value.ToString(),
-                    nama_lengkap = selectedRow.Cells["nama_lengkap"].Value.ToString(),
-                    alamat = selectedRow.Cells["alamat"].Value.ToString(),
-                    email = selectedRow.Cells["email"].Value.ToString()
-                };
+                    var selectedRow = dgvCustomer.SelectedRows[0];
 
-                var editForm = new EditCustomerMelaluiAdmin(selectedCustomer);
-                editForm.ShowDialog();
+                    CustomerModel selectedCustomer = new CustomerModel
+                    {
+                        id_customer = Convert.ToInt32(selectedRow.Cells["id_customer"].Value),
+                        username = selectedRow.Cells["username"].Value.ToString(),
+                        password = selectedRow.Cells["password"].Value.ToString(),
+                        nama_lengkap = selectedRow.Cells["nama_lengkap"].Value.ToString(),
+                        alamat = selectedRow.Cells["alamat"].Value.ToString(),
+                        email = selectedRow.Cells["email"].Value.ToString()
+                    };
 
-                // Refresh setelah edit
-                dgvCustomer.DataSource = CustomerController.GetAllCustomer();
+                    var editForm = new EditCustomerMelaluiAdmin(selectedCustomer);
+                    editForm.ShowDialog();
+
+                    // Refresh setelah edit
+                    dgvCustomer.DataSource = CustomerController.GetAllCustomer();
+                }
             }
+            else
+                {
+                    MessageBox.Show("Silakan pilih data yang ingin diedit.");
+                }
         }
 
         private void btnHapus_Click(object sender, EventArgs e)
