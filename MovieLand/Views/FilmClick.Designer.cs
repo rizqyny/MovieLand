@@ -43,6 +43,7 @@
             pb_Poster.Location = new Point(435, 12);
             pb_Poster.Name = "pb_Poster";
             pb_Poster.Size = new Size(125, 154);
+            pb_Poster.SizeMode = PictureBoxSizeMode.StretchImage;
             pb_Poster.TabIndex = 0;
             pb_Poster.TabStop = false;
             // 

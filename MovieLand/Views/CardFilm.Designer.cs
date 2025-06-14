@@ -48,7 +48,7 @@
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(208, 336);
+            tableLayoutPanel1.Size = new Size(208, 309);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // panelFilm
@@ -59,7 +59,7 @@
             panelFilm.Dock = DockStyle.Top;
             panelFilm.Location = new Point(3, 3);
             panelFilm.Name = "panelFilm";
-            panelFilm.Size = new Size(202, 330);
+            panelFilm.Size = new Size(202, 303);
             panelFilm.TabIndex = 0;
             panelFilm.Paint += panelFilm_Paint;
             // 
@@ -69,7 +69,7 @@
             lblJudul.ForeColor = Color.White;
             lblJudul.Location = new Point(14, 258);
             lblJudul.Name = "lblJudul";
-            lblJudul.Size = new Size(168, 57);
+            lblJudul.Size = new Size(168, 31);
             lblJudul.TabIndex = 1;
             lblJudul.Text = " Judul     ";
             // 
@@ -89,7 +89,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(tableLayoutPanel1);
             Name = "CardFilm";
-            Size = new Size(208, 336);
+            Size = new Size(208, 307);
             tableLayoutPanel1.ResumeLayout(false);
             panelFilm.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbGambarFilm).EndInit();

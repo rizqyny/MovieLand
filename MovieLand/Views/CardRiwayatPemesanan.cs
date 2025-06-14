@@ -22,25 +22,8 @@ namespace MovieLand.Views
 
         private void CardRiwayatPemesanan_Load(object sender, EventArgs e)
         {
-            string username = Helpers.LoggedInUsername;
-            if (string.IsNullOrEmpty(username))
-            {
-                MessageBox.Show("Gagal memuat profil. Username tidak ditemukan.");
-                return;
-            }
 
-            RiwayatPemesananController controller = new RiwayatPemesananController();
-            RiwayatPemesananModel riwayatPemesanan = controller.GetRiwayatByUsername(username);
-
-            if (riwayatPemesanan!= null)
-            {
-                lblJudul.Text = riwayatPemesanan.judul;
-                lblJamTayang.Text = riwayatPemesanan.jam_tayang;
-            }
-            else
-            {
-                MessageBox.Show("Data pengguna tidak ditemukan.");
-            }
         }
+
     }
 }

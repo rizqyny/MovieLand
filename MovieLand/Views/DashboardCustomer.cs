@@ -29,7 +29,7 @@ namespace MovieLand.Views
         {
             List<FilmModel> filmList = FilmController.GetAllFilm();
 
-            int x = 200, y = 200;
+            int x = 200, y = 220;
             int maxPerRow = 4;
             int counter = 0;
 
@@ -51,7 +51,7 @@ namespace MovieLand.Views
                     }
                 };
 
-                card.Size = new Size(202, 345);
+                card.Size = new Size(202, 307);
                 card.Location = new Point(x, y);
 
                 this.Controls.Add(card);
@@ -61,11 +61,10 @@ namespace MovieLand.Views
 
                 if (counter % maxPerRow == 0)
                 {
-                    x = 10;
-                    y += card.Height + 10;
+                    x = 200;
+                    y += card.Height + 65;
                 }
             }
         }
-
     }
 }
