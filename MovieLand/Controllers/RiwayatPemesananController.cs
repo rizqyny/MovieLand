@@ -30,7 +30,7 @@ namespace MovieLand.Controllers
             cmd.Parameters.AddWithValue("@username", username);
 
             using var reader = cmd.ExecuteReader();
-            while (reader.Read())
+            while (reader.Read()) // ambil semua, bukan hanya 1
             {
                 var riwayat = new RiwayatPemesananModel
                 {
@@ -45,6 +45,7 @@ namespace MovieLand.Controllers
 
             return riwayats;
         }
+
 
     }
 }

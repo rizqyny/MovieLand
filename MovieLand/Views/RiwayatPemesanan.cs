@@ -22,6 +22,7 @@ namespace MovieLand.Views
         private void RiwayatPemesanan_Load(object sender, EventArgs e)
         {
             LoadDataRiwayat();
+            var listRiwayat = RiwayatPemesananController.GetRiwayatByUsername(Helpers.LoggedInUsername);
         }
 
         private void LoadDataRiwayat()
@@ -51,6 +52,7 @@ namespace MovieLand.Views
                     y += card.Height + 10;            // Turun baris
                 }
             }
+            //MessageBox.Show("Jumlah transaksi ditemukan: " + riwayatList.Count);
         }
 
     }
