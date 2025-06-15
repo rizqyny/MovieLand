@@ -15,35 +15,14 @@ namespace MovieLand.Views
         public DashboardAdminForm()
         {
             InitializeComponent();
-        }
-
-        private void btnDashboard_Click(object sender, EventArgs e)
-        {
-            // BUAT GANTI WARNA BUTTON AJA
-            string imagePath = Path.Combine(Application.StartupPath, "Images", "LightBlue.jpg");
-            btnDashboard.BackgroundImage = Image.FromFile(imagePath);
-
-            string imagePath2 = Path.Combine(Application.StartupPath, "Images", "Navy.jpg");
-            btnManageFilm.BackgroundImage = Image.FromFile(imagePath2);
-
-            string imagePath3 = Path.Combine(Application.StartupPath, "Images", "Navy.jpg");
-            btnManageCustomer.BackgroundImage = Image.FromFile(imagePath3);
-            
-            string imagePath4 = Path.Combine(Application.StartupPath, "Images", "Navy.jpg");
-            btnLogout.BackgroundImage = Image.FromFile(imagePath4);
-
-            //
             panelRight.Controls.Clear();
-            DashboardAdmin dashboardAdmin = new DashboardAdmin();
-            panelRight.Controls.Add(dashboardAdmin);
-
+            ManageFilm manageFilm = new ManageFilm();
+            panelRight.Controls.Add(manageFilm);
         }
+
 
         private void btnManageFilm_Click(object sender, EventArgs e)
         {
-            string imagePath = Path.Combine(Application.StartupPath, "Images", "Navy.jpg");
-            btnDashboard.BackgroundImage = Image.FromFile(imagePath);
-
             string imagePath2 = Path.Combine(Application.StartupPath, "Images", "LightBlue.jpg");
             btnManageFilm.BackgroundImage = Image.FromFile(imagePath2);
 
@@ -61,9 +40,6 @@ namespace MovieLand.Views
 
         private void btnManageCustomer_Click(object sender, EventArgs e)
         {
-            string imagePath = Path.Combine(Application.StartupPath, "Images", "Navy.jpg");
-            btnDashboard.BackgroundImage = Image.FromFile(imagePath);
-
             string imagePath2 = Path.Combine(Application.StartupPath, "Images", "Navy.jpg");
             btnManageFilm.BackgroundImage = Image.FromFile(imagePath2);
 
@@ -81,11 +57,7 @@ namespace MovieLand.Views
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            string imagePath = Path.Combine(Application.StartupPath, "Images", "Navy.jpg");
-            btnDashboard.BackgroundImage = Image.FromFile(imagePath);
-
             string imagePath2 = Path.Combine(Application.StartupPath, "Images", "Navy.jpg");
-            btnManageFilm.BackgroundImage = Image.FromFile(imagePath2);
             btnManageFilm.BackgroundImage = Image.FromFile(imagePath2);
 
             string imagePath3 = Path.Combine(Application.StartupPath, "Images", "Navy.jpg");

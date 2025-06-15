@@ -41,10 +41,10 @@
             dgvFilm.BackgroundColor = Color.CornflowerBlue;
             dgvFilm.BorderStyle = BorderStyle.Fixed3D;
             dgvFilm.ColumnHeadersHeight = 40;
-            dgvFilm.Location = new Point(177, 159);
+            dgvFilm.Location = new Point(177, 199);
             dgvFilm.Name = "dgvFilm";
             dgvFilm.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dgvFilm.Size = new Size(1103, 633);
+            dgvFilm.Size = new Size(1103, 593);
             dgvFilm.TabIndex = 2;
             dgvFilm.CellContentClick += dgvFilm_CellContentClick;
             // 
@@ -94,6 +94,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             Controls.Add(button1);
             Controls.Add(btnEdit);
             Controls.Add(btnTambahFilm);

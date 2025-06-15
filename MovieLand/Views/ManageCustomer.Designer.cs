@@ -50,10 +50,10 @@
             dgvCustomer.BackgroundColor = Color.CornflowerBlue;
             dgvCustomer.BorderStyle = BorderStyle.Fixed3D;
             dgvCustomer.ColumnHeadersHeight = 40;
-            dgvCustomer.Location = new Point(177, 159);
+            dgvCustomer.Location = new Point(177, 200);
             dgvCustomer.Name = "dgvCustomer";
             dgvCustomer.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dgvCustomer.Size = new Size(1043, 633);
+            dgvCustomer.Size = new Size(1043, 592);
             dgvCustomer.TabIndex = 3;
             dgvCustomer.CellContentClick += dgvCustomer_CellContentClick;
             // 
@@ -89,6 +89,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             Controls.Add(btnHapus2);
             Controls.Add(btnEdit2);
             Controls.Add(dgvCustomer);

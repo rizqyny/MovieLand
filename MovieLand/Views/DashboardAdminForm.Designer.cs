@@ -35,7 +35,6 @@
             btnLogout = new Button();
             btnManageCustomer = new Button();
             btnManageFilm = new Button();
-            btnDashboard = new Button();
             tableLayoutPanel1.SuspendLayout();
             panelLeft.SuspendLayout();
             SuspendLayout();
@@ -69,7 +68,6 @@
             panelLeft.Controls.Add(btnLogout);
             panelLeft.Controls.Add(btnManageCustomer);
             panelLeft.Controls.Add(btnManageFilm);
-            panelLeft.Controls.Add(btnDashboard);
             panelLeft.Dock = DockStyle.Fill;
             panelLeft.Location = new Point(3, 3);
             panelLeft.Name = "panelLeft";
@@ -96,7 +94,7 @@
             btnManageCustomer.BackgroundImage = (Image)resources.GetObject("btnManageCustomer.BackgroundImage");
             btnManageCustomer.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnManageCustomer.ForeColor = Color.White;
-            btnManageCustomer.Location = new Point(145, 555);
+            btnManageCustomer.Location = new Point(138, 471);
             btnManageCustomer.Name = "btnManageCustomer";
             btnManageCustomer.Size = new Size(222, 46);
             btnManageCustomer.TabIndex = 2;
@@ -110,27 +108,13 @@
             btnManageFilm.BackgroundImage = (Image)resources.GetObject("btnManageFilm.BackgroundImage");
             btnManageFilm.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnManageFilm.ForeColor = Color.White;
-            btnManageFilm.Location = new Point(145, 472);
+            btnManageFilm.Location = new Point(138, 388);
             btnManageFilm.Name = "btnManageFilm";
             btnManageFilm.Size = new Size(222, 46);
             btnManageFilm.TabIndex = 1;
             btnManageFilm.Text = "Manage Film";
             btnManageFilm.UseVisualStyleBackColor = false;
             btnManageFilm.Click += btnManageFilm_Click;
-            // 
-            // btnDashboard
-            // 
-            btnDashboard.BackColor = Color.White;
-            btnDashboard.BackgroundImage = (Image)resources.GetObject("btnDashboard.BackgroundImage");
-            btnDashboard.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDashboard.ForeColor = Color.White;
-            btnDashboard.Location = new Point(145, 388);
-            btnDashboard.Name = "btnDashboard";
-            btnDashboard.Size = new Size(222, 46);
-            btnDashboard.TabIndex = 0;
-            btnDashboard.Text = "Dashboard";
-            btnDashboard.UseVisualStyleBackColor = false;
-            btnDashboard.Click += btnDashboard_Click;
             // 
             // DashboardAdminForm
             // 
@@ -150,7 +134,6 @@
 
         private TableLayoutPanel tableLayoutPanel1;
         private Panel panelRight;
-        private Button btnDashboard;
         private Panel panelLeft;
         private Button btnLogout;
         private Button btnManageCustomer;
