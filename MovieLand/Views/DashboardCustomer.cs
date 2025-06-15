@@ -22,14 +22,13 @@ namespace MovieLand.Views
         private void DashboardCustomer_Load(object sender, EventArgs e)
         {
             LoadDataFilm();
-            lblDashboardCustomer.BackColor = Color.Transparent;
         }
 
         private void LoadDataFilm()
         {
             List<FilmModel> filmList = FilmController.GetAllFilm();
 
-            int x = 200, y = 220;
+            int x = 212, y = 220;
             int maxPerRow = 4;
             int counter = 0;
 
@@ -61,7 +60,7 @@ namespace MovieLand.Views
 
                 if (counter % maxPerRow == 0)
                 {
-                    x = 200;
+                    x = 212;
                     y += card.Height + 65;
                 }
             }

@@ -29,7 +29,7 @@ namespace MovieLand.Views
         {
             List<RiwayatPemesananModel> riwayatList = RiwayatPemesananController.GetRiwayatByUsername(Helpers.LoggedInUsername);
 
-            int x = 200, y = 220;             // Posisi awal
+            int x = 212, y = 220;             // Posisi awal
             int maxPerRow = 2;              // Jumlah card per baris
             int counter = 0;
 
@@ -48,7 +48,7 @@ namespace MovieLand.Views
 
                 if (counter % maxPerRow == 0)
                 {
-                    x = 200;                          // Reset ke kiri
+                    x = 212;                          // Reset ke kiri
                     y += card.Height + 10;            // Turun baris
                 }
             }
