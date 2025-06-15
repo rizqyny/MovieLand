@@ -29,6 +29,16 @@ namespace MovieLand.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void Transaksi_Load(object sender, EventArgs e)
+        {
+            label1.BackColor = Color.Transparent;
+        }
+
+        private void btnSelesai2_Click(object sender, EventArgs e)
+        {
             using (var conn = Database.GetConnection())
             {
                 conn.Open();
@@ -72,11 +82,6 @@ namespace MovieLand.Views
                     }
                 }
             }
-        }
-
-        private void Transaksi_Load(object sender, EventArgs e)
-        {
-            label1.BackColor = Color.Transparent;
         }
     }
 }

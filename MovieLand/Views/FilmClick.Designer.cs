@@ -33,9 +33,9 @@
             lbl_Judul = new Label();
             lbl_Kategori = new Label();
             lbl_Durasi = new Label();
-            btn_Pesan = new Button();
-            btn_Tutup = new Button();
             lbl_Harga = new Label();
+            btn_Pesan2 = new Button();
+            btnKembali2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pb_Poster).BeginInit();
             SuspendLayout();
             // 
@@ -78,26 +78,6 @@
             lbl_Durasi.TabIndex = 3;
             lbl_Durasi.Text = "label3";
             // 
-            // btn_Pesan
-            // 
-            btn_Pesan.Location = new Point(382, 358);
-            btn_Pesan.Name = "btn_Pesan";
-            btn_Pesan.Size = new Size(94, 29);
-            btn_Pesan.TabIndex = 4;
-            btn_Pesan.Text = "Pesan ";
-            btn_Pesan.UseVisualStyleBackColor = true;
-            btn_Pesan.Click += btn_Pesan_Click;
-            // 
-            // btn_Tutup
-            // 
-            btn_Tutup.Location = new Point(504, 358);
-            btn_Tutup.Name = "btn_Tutup";
-            btn_Tutup.Size = new Size(94, 29);
-            btn_Tutup.TabIndex = 5;
-            btn_Tutup.Text = "Kembali";
-            btn_Tutup.UseVisualStyleBackColor = true;
-            btn_Tutup.Click += btn_Tutup_Click;
-            // 
             // lbl_Harga
             // 
             lbl_Harga.AutoSize = true;
@@ -108,15 +88,39 @@
             lbl_Harga.TabIndex = 6;
             lbl_Harga.Text = "label4";
             // 
+            // btn_Pesan2
+            // 
+            btn_Pesan2.BackgroundImage = (Image)resources.GetObject("btn_Pesan2.BackgroundImage");
+            btn_Pesan2.ForeColor = SystemColors.ControlLightLight;
+            btn_Pesan2.Location = new Point(371, 372);
+            btn_Pesan2.Name = "btn_Pesan2";
+            btn_Pesan2.Size = new Size(101, 35);
+            btn_Pesan2.TabIndex = 7;
+            btn_Pesan2.Text = "Pesan";
+            btn_Pesan2.UseVisualStyleBackColor = true;
+            btn_Pesan2.Click += btn_Pesan2_Click;
+            // 
+            // btnKembali2
+            // 
+            btnKembali2.BackgroundImage = (Image)resources.GetObject("btnKembali2.BackgroundImage");
+            btnKembali2.ForeColor = SystemColors.ControlLightLight;
+            btnKembali2.Location = new Point(518, 372);
+            btnKembali2.Name = "btnKembali2";
+            btnKembali2.Size = new Size(101, 35);
+            btnKembali2.TabIndex = 8;
+            btnKembali2.Text = "Kembali";
+            btnKembali2.UseVisualStyleBackColor = true;
+            btnKembali2.Click += btnKembali2_Click;
+            // 
             // FilmClick
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(982, 503);
+            Controls.Add(btnKembali2);
+            Controls.Add(btn_Pesan2);
             Controls.Add(lbl_Harga);
-            Controls.Add(btn_Tutup);
-            Controls.Add(btn_Pesan);
             Controls.Add(lbl_Durasi);
             Controls.Add(lbl_Kategori);
             Controls.Add(lbl_Judul);
@@ -136,8 +140,8 @@
         private Label lbl_Judul;
         private Label lbl_Kategori;
         private Label lbl_Durasi;
-        private Button btn_Pesan;
-        private Button btn_Tutup;
         private Label lbl_Harga;
+        private Button btn_Pesan2;
+        private Button btnKembali2;
     }
 }

@@ -56,5 +56,18 @@ namespace MovieLand.Views
         {
             this.Close();
         }
+
+        private void btn_Pesan2_Click(object sender, EventArgs e)
+        {
+            int idCustomer = Helpers.LoggedInCustomerId; // Gantilah dengan data user yang sedang login
+            Kursi kursiForm = new Kursi(_film.id_film, idCustomer);
+            kursiForm.Show();
+            //this.Close(); Tutup form film jika perlu
+        }
+
+        private void btnKembali2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Transaksi));
             pictureBox1 = new PictureBox();
             label1 = new Label();
-            button1 = new Button();
+            btnSelesai2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -54,15 +54,17 @@
             label1.TabIndex = 1;
             label1.Text = "SCAN KODE QR";
             // 
-            // button1
+            // btnSelesai2
             // 
-            button1.Location = new Point(440, 424);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 2;
-            button1.Text = "Selesai";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnSelesai2.BackgroundImage = (Image)resources.GetObject("btnSelesai2.BackgroundImage");
+            btnSelesai2.ForeColor = SystemColors.ControlLightLight;
+            btnSelesai2.Location = new Point(436, 426);
+            btnSelesai2.Name = "btnSelesai2";
+            btnSelesai2.Size = new Size(101, 35);
+            btnSelesai2.TabIndex = 8;
+            btnSelesai2.Text = "Selesai";
+            btnSelesai2.UseVisualStyleBackColor = true;
+            btnSelesai2.Click += btnSelesai2_Click;
             // 
             // Transaksi
             // 
@@ -70,7 +72,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(982, 503);
-            Controls.Add(button1);
+            Controls.Add(btnSelesai2);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             Name = "Transaksi";
@@ -86,6 +88,6 @@
 
         private PictureBox pictureBox1;
         private Label label1;
-        private Button button1;
+        private Button btnSelesai2;
     }
 }
