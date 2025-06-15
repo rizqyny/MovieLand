@@ -29,24 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageFilm));
-            lblDataFilm = new Label();
             dgvFilm = new DataGridView();
             btnTambahFilm = new Button();
             btnEdit = new Button();
             button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvFilm).BeginInit();
             SuspendLayout();
-            // 
-            // lblDataFilm
-            // 
-            lblDataFilm.AutoSize = true;
-            lblDataFilm.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDataFilm.ForeColor = Color.Black;
-            lblDataFilm.Location = new Point(565, 50);
-            lblDataFilm.Name = "lblDataFilm";
-            lblDataFilm.Size = new Size(305, 81);
-            lblDataFilm.TabIndex = 1;
-            lblDataFilm.Text = "Data FIlm";
             // 
             // dgvFilm
             // 
@@ -110,19 +98,15 @@
             Controls.Add(btnEdit);
             Controls.Add(btnTambahFilm);
             Controls.Add(dgvFilm);
-            Controls.Add(lblDataFilm);
             ForeColor = SystemColors.ControlDarkDark;
             Name = "ManageFilm";
             Size = new Size(1470, 1080);
             Load += ManageFilm_Load;
             ((System.ComponentModel.ISupportInitialize)dgvFilm).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label lblDataFilm;
         private DataGridView dgvFilm;
         private Button btnTambahFilm;
         private Button btnEdit;

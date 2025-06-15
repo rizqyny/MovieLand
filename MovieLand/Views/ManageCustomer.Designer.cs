@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageCustomer));
             lblDataCustomer = new Label();
             dgvCustomer = new DataGridView();
-            btnEdit = new Button();
-            btnHapus = new Button();
+            btnEdit2 = new Button();
+            btnHapus2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvCustomer).BeginInit();
             SuspendLayout();
             // 
@@ -41,9 +42,8 @@
             lblDataCustomer.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDataCustomer.Location = new Point(487, 50);
             lblDataCustomer.Name = "lblDataCustomer";
-            lblDataCustomer.Size = new Size(453, 81);
+            lblDataCustomer.Size = new Size(0, 81);
             lblDataCustomer.TabIndex = 2;
-            lblDataCustomer.Text = "Data Customer";
             // 
             // dgvCustomer
             // 
@@ -57,32 +57,40 @@
             dgvCustomer.TabIndex = 3;
             dgvCustomer.CellContentClick += dgvCustomer_CellContentClick;
             // 
-            // btnEdit
+            // btnEdit2
             // 
-            btnEdit.Location = new Point(846, 832);
-            btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(94, 29);
-            btnEdit.TabIndex = 4;
-            btnEdit.Text = "Edit";
-            btnEdit.UseVisualStyleBackColor = true;
-            btnEdit.Click += btnEdit_Click;
+            btnEdit2.BackColor = Color.Black;
+            btnEdit2.BackgroundImage = (Image)resources.GetObject("btnEdit2.BackgroundImage");
+            btnEdit2.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEdit2.ForeColor = Color.White;
+            btnEdit2.Location = new Point(703, 832);
+            btnEdit2.Name = "btnEdit2";
+            btnEdit2.Size = new Size(237, 61);
+            btnEdit2.TabIndex = 6;
+            btnEdit2.Text = "Edit";
+            btnEdit2.UseVisualStyleBackColor = false;
+            btnEdit2.Click += btnTambahFilm_Click;
             // 
-            // btnHapus
+            // btnHapus2
             // 
-            btnHapus.Location = new Point(1126, 832);
-            btnHapus.Name = "btnHapus";
-            btnHapus.Size = new Size(94, 29);
-            btnHapus.TabIndex = 5;
-            btnHapus.Text = "Hapus";
-            btnHapus.UseVisualStyleBackColor = true;
-            btnHapus.Click += btnHapus_Click;
+            btnHapus2.BackColor = Color.Black;
+            btnHapus2.BackgroundImage = (Image)resources.GetObject("btnHapus2.BackgroundImage");
+            btnHapus2.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnHapus2.ForeColor = Color.White;
+            btnHapus2.Location = new Point(983, 832);
+            btnHapus2.Name = "btnHapus2";
+            btnHapus2.Size = new Size(237, 61);
+            btnHapus2.TabIndex = 7;
+            btnHapus2.Text = "Hapus";
+            btnHapus2.UseVisualStyleBackColor = false;
+            btnHapus2.Click += btnHapus2_Click;
             // 
             // ManageCustomer
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(btnHapus);
-            Controls.Add(btnEdit);
+            Controls.Add(btnHapus2);
+            Controls.Add(btnEdit2);
             Controls.Add(dgvCustomer);
             Controls.Add(lblDataCustomer);
             Name = "ManageCustomer";
@@ -97,7 +105,7 @@
 
         private Label lblDataCustomer;
         private DataGridView dgvCustomer;
-        private Button btnEdit;
-        private Button btnHapus;
+        private Button btnEdit2;
+        private Button btnHapus2;
     }
 }

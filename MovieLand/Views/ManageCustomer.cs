@@ -39,8 +39,18 @@ namespace MovieLand.Views
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void btnHapus_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnTambahFilm_Click(object sender, EventArgs e)
+        {
             if (dgvCustomer.SelectedRows.Count > 0)
-            { 
+            {
                 if (dgvCustomer.SelectedRows.Count > 0)
                 {
                     var selectedRow = dgvCustomer.SelectedRows[0];
@@ -63,12 +73,12 @@ namespace MovieLand.Views
                 }
             }
             else
-                {
-                    MessageBox.Show("Silakan pilih data yang ingin diedit.");
-                }
+            {
+                MessageBox.Show("Silakan pilih data yang ingin diedit.");
+            }
         }
 
-        private void btnHapus_Click(object sender, EventArgs e)
+        private void btnHapus2_Click(object sender, EventArgs e)
         {
             if (dgvCustomer.SelectedRows.Count > 0)
             {
