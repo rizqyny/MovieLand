@@ -10,5 +10,7 @@ namespace MovieLand
     public static class Helpers
     {
         public static string LoggedInUsername { get; set; }
+
+        public static int LoggedInCustomerId { get; set; }
     }
 }

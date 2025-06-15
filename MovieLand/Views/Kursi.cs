@@ -32,7 +32,7 @@ namespace MovieLand.Views
             }
 
             int nomorKursi = Convert.ToInt32(comboBox1.SelectedItem);
-
+            int idCustomer = Helpers.LoggedInCustomerId;
             Transaksi transaksi = new Transaksi(_idCustomer, _idFilm, nomorKursi);
             transaksi.Show();
             //this.Close(); // optional: untuk menutup form kursi setelah lanjut

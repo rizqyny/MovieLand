@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MovieLand.Controllers;
 using Npgsql;
 
 namespace MovieLand.Views
@@ -29,7 +30,6 @@ namespace MovieLand.Views
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            
             string username = tb_Username.Text.Trim();
             string password = tb_Password.Text.Trim();
 
@@ -42,17 +42,30 @@ namespace MovieLand.Views
             string connString = "Host=localhost;Username=postgres;Password=123;Database=MovieLand";
             using (var conn = new NpgsqlConnection(connString))
             {
-                if (username == "admin" && password == "admin")
-                {
-                    MessageBox.Show("Login sebagai admin berhasil!");
-                    DashboardAdminForm adminDashboard = new DashboardAdminForm();
-                    adminDashboard.Show();
-                    return;
-                }
                 try
                 {
                     conn.Open();
 
+                    // 1. Cek dulu apakah user adalah admin
+                    string adminSql = "SELECT * FROM admin WHERE username = @username AND password = @password";
+                    using (var adminCmd = new NpgsqlCommand(adminSql, conn))
+                    {
+                        adminCmd.Parameters.AddWithValue("username", username);
+                        adminCmd.Parameters.AddWithValue("password", password);
+
+                        using (var adminReader = adminCmd.ExecuteReader())
+                        {
+                            if (adminReader.Read())
+                            {
+                                MessageBox.Show("Login sebagai admin berhasil!");
+                                DashboardAdminForm adminDashboard = new DashboardAdminForm();
+                                adminDashboard.Show();
+                                return;
+                            }
+                        }
+                    }
+
+                    // 2. Jika bukan admin, cek customer
                     string sql = "SELECT password, nama_lengkap FROM customer WHERE username = @username";
                     using (var cmd = new NpgsqlCommand(sql, conn))
                     {
@@ -68,16 +81,23 @@ namespace MovieLand.Views
 
                             string passwordFromDb = reader.GetString(0);
                             string namaLengkap = reader.IsDBNull(1) ? "" : reader.GetString(1);
-                            
-                            Helpers.LoggedInUsername = username;
-                            
+
                             if (password == passwordFromDb)
                             {
                                 MessageBox.Show("Login berhasil!");
 
+                                Helpers.LoggedInUsername = username;
+
+                                // Ambil dan simpan id_customer
+                                var controller = new CustomerController();
+                                var customer = controller.GetCustomerByUsername(username);
+                                if (customer != null)
+                                {
+                                    Helpers.LoggedInCustomerId = customer.id_customer;
+                                }
+
                                 if (string.IsNullOrWhiteSpace(namaLengkap))
                                 {
-                                    
                                     DataDiri dataDiriForm = new DataDiri();
                                     dataDiriForm.LoggedInUsername = username;
                                     dataDiriForm.Show();
@@ -88,7 +108,7 @@ namespace MovieLand.Views
                                     dashboardForm.Show();
                                 }
 
-                                //this.Hide();
+                                // Optional: this.Hide(); untuk menyembunyikan form login
                             }
                             else
                             {
@@ -103,6 +123,7 @@ namespace MovieLand.Views
                 }
             }
         }
+
 
 
         private void label_Register_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
