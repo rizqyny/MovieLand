@@ -76,7 +76,7 @@ namespace MovieLand.Views
 
         private void Transaksi_Load(object sender, EventArgs e)
         {
-
+            label1.BackColor = Color.Transparent;
         }
     }
 }

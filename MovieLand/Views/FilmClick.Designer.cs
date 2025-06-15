@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FilmClick));
             pb_Poster = new PictureBox();
             lbl_Judul = new Label();
             lbl_Kategori = new Label();
@@ -61,7 +62,7 @@
             // 
             lbl_Kategori.AutoSize = true;
             lbl_Kategori.Font = new Font("Segoe UI", 10F);
-            lbl_Kategori.Location = new Point(473, 224);
+            lbl_Kategori.Location = new Point(465, 224);
             lbl_Kategori.Name = "lbl_Kategori";
             lbl_Kategori.Size = new Size(55, 23);
             lbl_Kategori.TabIndex = 2;
@@ -71,7 +72,7 @@
             // 
             lbl_Durasi.AutoSize = true;
             lbl_Durasi.Font = new Font("Segoe UI", 10F);
-            lbl_Durasi.Location = new Point(473, 263);
+            lbl_Durasi.Location = new Point(465, 260);
             lbl_Durasi.Name = "lbl_Durasi";
             lbl_Durasi.Size = new Size(55, 23);
             lbl_Durasi.TabIndex = 3;
@@ -101,7 +102,7 @@
             // 
             lbl_Harga.AutoSize = true;
             lbl_Harga.Font = new Font("Segoe UI", 10F);
-            lbl_Harga.Location = new Point(473, 297);
+            lbl_Harga.Location = new Point(465, 294);
             lbl_Harga.Name = "lbl_Harga";
             lbl_Harga.Size = new Size(55, 23);
             lbl_Harga.TabIndex = 6;
@@ -111,6 +112,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(982, 503);
             Controls.Add(lbl_Harga);
             Controls.Add(btn_Tutup);
