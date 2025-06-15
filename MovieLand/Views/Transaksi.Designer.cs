@@ -38,7 +38,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(385, 93);
+            pictureBox1.Location = new Point(352, 100);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(262, 260);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -48,7 +48,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(472, 374);
+            label1.Location = new Point(430, 363);
             label1.Name = "label1";
             label1.Size = new Size(113, 20);
             label1.TabIndex = 1;
@@ -56,7 +56,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(481, 425);
+            button1.Location = new Point(440, 424);
             button1.Name = "button1";
             button1.Size = new Size(94, 29);
             button1.TabIndex = 2;
@@ -68,6 +68,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(982, 503);
             Controls.Add(button1);
             Controls.Add(label1);

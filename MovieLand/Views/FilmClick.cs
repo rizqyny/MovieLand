@@ -25,6 +25,11 @@ namespace MovieLand.Views
 
         private void FilmClick_Load(object sender, EventArgs e)
         {
+            lbl_Judul.BackColor = Color.Transparent;
+            lbl_Durasi.BackColor = Color.Transparent;
+            lbl_Harga.BackColor = Color.Transparent;
+            lbl_Kategori.BackColor = Color.Transparent;
+
             lbl_Judul.Text = _film.judul;
             lbl_Durasi.Text = _film.durasi + " menit";
             //lbl_Deskripsi.Text = _film.deskripsi;
