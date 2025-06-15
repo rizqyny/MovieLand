@@ -40,6 +40,7 @@ namespace MovieLand.Views
 
         private void Kursi_Load(object sender, EventArgs e)
         {
+            label1.BackColor = Color.Transparent;
             using (var conn = Database.GetConnection())
             {
                 conn.Open();
@@ -55,10 +56,15 @@ namespace MovieLand.Views
             }
         }
 
- 
+
 
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }
