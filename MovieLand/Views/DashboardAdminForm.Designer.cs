@@ -35,6 +35,7 @@
             btnLogout = new Button();
             btnManageCustomer = new Button();
             btnManageFilm = new Button();
+            button1 = new Button();
             tableLayoutPanel1.SuspendLayout();
             panelLeft.SuspendLayout();
             SuspendLayout();
@@ -65,6 +66,7 @@
             // panelLeft
             // 
             panelLeft.BackgroundImage = (Image)resources.GetObject("panelLeft.BackgroundImage");
+            panelLeft.Controls.Add(button1);
             panelLeft.Controls.Add(btnLogout);
             panelLeft.Controls.Add(btnManageCustomer);
             panelLeft.Controls.Add(btnManageFilm);
@@ -94,7 +96,7 @@
             btnManageCustomer.BackgroundImage = (Image)resources.GetObject("btnManageCustomer.BackgroundImage");
             btnManageCustomer.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnManageCustomer.ForeColor = Color.White;
-            btnManageCustomer.Location = new Point(138, 471);
+            btnManageCustomer.Location = new Point(138, 559);
             btnManageCustomer.Name = "btnManageCustomer";
             btnManageCustomer.Size = new Size(222, 46);
             btnManageCustomer.TabIndex = 2;
@@ -108,13 +110,27 @@
             btnManageFilm.BackgroundImage = (Image)resources.GetObject("btnManageFilm.BackgroundImage");
             btnManageFilm.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnManageFilm.ForeColor = Color.White;
-            btnManageFilm.Location = new Point(138, 388);
+            btnManageFilm.Location = new Point(138, 476);
             btnManageFilm.Name = "btnManageFilm";
             btnManageFilm.Size = new Size(222, 46);
             btnManageFilm.TabIndex = 1;
             btnManageFilm.Text = "Manage Film";
             btnManageFilm.UseVisualStyleBackColor = false;
             btnManageFilm.Click += btnManageFilm_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.White;
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(138, 388);
+            button1.Name = "button1";
+            button1.Size = new Size(222, 46);
+            button1.TabIndex = 4;
+            button1.Text = "Dashboard";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // DashboardAdminForm
             // 
@@ -138,5 +154,6 @@
         private Button btnLogout;
         private Button btnManageCustomer;
         private Button btnManageFilm;
+        private Button button1;
     }
 }

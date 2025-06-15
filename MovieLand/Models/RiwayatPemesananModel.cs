@@ -13,5 +13,7 @@ namespace MovieLand.Models
         public int harga { get; set; }
         public int nomor_kursi { get; set; }
         public string waktu_transaksi { get; set; }
+        public string nama_customer { get; set; }
+        public string username { get; set; }
     }
 }

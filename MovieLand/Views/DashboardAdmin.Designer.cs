@@ -28,32 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblDashboardAdmin = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashboardAdmin));
             SuspendLayout();
-            // 
-            // lblDashboardAdmin
-            // 
-            lblDashboardAdmin.AutoSize = true;
-            lblDashboardAdmin.Font = new Font("Segoe UI", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDashboardAdmin.Location = new Point(440, 50);
-            lblDashboardAdmin.Name = "lblDashboardAdmin";
-            lblDashboardAdmin.Size = new Size(543, 81);
-            lblDashboardAdmin.TabIndex = 0;
-            lblDashboardAdmin.Text = "Dashboard Admin";
             // 
             // DashboardAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(lblDashboardAdmin);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             Name = "DashboardAdmin";
             Size = new Size(1470, 1080);
+            Load += DashboardAdmin_Load;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label lblDashboardAdmin;
     }
 }
