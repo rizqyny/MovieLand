@@ -64,7 +64,6 @@ namespace MovieLand.Views
                 return;
             }
 
-            // Membuat objek customer dari model
             CustomerModel customer = new CustomerModel
             {
                 username = tb_Username.Text,

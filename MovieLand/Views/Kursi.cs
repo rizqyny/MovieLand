@@ -35,7 +35,6 @@ namespace MovieLand.Views
             int idCustomer = Helpers.LoggedInCustomerId;
             Transaksi transaksi = new Transaksi(_idCustomer, _idFilm, nomorKursi);
             transaksi.Show();
-            //this.Close(); // optional: untuk menutup form kursi setelah lanjut
         }
 
         private void Kursi_Load(object sender, EventArgs e)

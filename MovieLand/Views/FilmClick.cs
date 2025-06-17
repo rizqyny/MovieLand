@@ -46,10 +46,10 @@ namespace MovieLand.Views
 
         private void btn_Pesan_Click(object sender, EventArgs e)
         {
-            int idCustomer = Helpers.LoggedInCustomerId; // Gantilah dengan data user yang sedang login
+            int idCustomer = Helpers.LoggedInCustomerId;
             Kursi kursiForm = new Kursi(_film.id_film, idCustomer);
             kursiForm.Show();
-            //this.Close(); Tutup form film jika perlu
+            
         }
 
         private void btn_Tutup_Click(object sender, EventArgs e)
@@ -59,10 +59,10 @@ namespace MovieLand.Views
 
         private void btn_Pesan2_Click(object sender, EventArgs e)
         {
-            int idCustomer = Helpers.LoggedInCustomerId; // Gantilah dengan data user yang sedang login
+            int idCustomer = Helpers.LoggedInCustomerId; 
             Kursi kursiForm = new Kursi(_film.id_film, idCustomer);
             kursiForm.Show();
-            //this.Close(); Tutup form film jika perlu
+            
         }
 
         private void btnKembali2_Click(object sender, EventArgs e)

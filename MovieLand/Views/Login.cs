@@ -46,7 +46,6 @@ namespace MovieLand.Views
                 {
                     conn.Open();
 
-                    // 1. Cek dulu apakah user adalah admin
                     string adminSql = "SELECT * FROM admin WHERE username = @username AND password = @password";
                     using (var adminCmd = new NpgsqlCommand(adminSql, conn))
                     {
@@ -65,7 +64,6 @@ namespace MovieLand.Views
                         }
                     }
 
-                    // 2. Jika bukan admin, cek customer
                     string sql = "SELECT password, nama_lengkap FROM customer WHERE username = @username";
                     using (var cmd = new NpgsqlCommand(sql, conn))
                     {
@@ -88,7 +86,6 @@ namespace MovieLand.Views
 
                                 Helpers.LoggedInUsername = username;
 
-                                // Ambil dan simpan id_customer
                                 var controller = new CustomerController();
                                 var customer = controller.GetCustomerByUsername(username);
                                 if (customer != null)
@@ -107,8 +104,6 @@ namespace MovieLand.Views
                                     DashboardCustomerForm dashboardForm = new DashboardCustomerForm();
                                     dashboardForm.Show();
                                 }
-
-                                // Optional: this.Hide(); untuk menyembunyikan form login
                             }
                             else
                             {

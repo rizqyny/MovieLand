@@ -18,7 +18,6 @@ namespace MovieLand.Views
         }
 
 
-        // BUAT GANTI WARNA BUTTON AJA
         string imagePathLightBlue = Path.Combine(Application.StartupPath, "Images", "LightBlue.jpg");
         string imagePathNavy = Path.Combine(Application.StartupPath, "Images", "Navy.jpg");
 
@@ -72,10 +71,10 @@ namespace MovieLand.Views
 
             DialogResult result = MessageBox.Show
             (
-            "Yakin ingin logout?",         // Pesan
-            "Konfirmasi Logout",           // Judul
-            MessageBoxButtons.YesNoCancel, // Tombol: Yes / No / Cancel
-            MessageBoxIcon.Question        // Icon tanda tanya
+            "Yakin ingin logout?",        
+            "Konfirmasi Logout",           
+            MessageBoxButtons.YesNoCancel, 
+            MessageBoxIcon.Question        
             );
 
             if (result == DialogResult.Yes)

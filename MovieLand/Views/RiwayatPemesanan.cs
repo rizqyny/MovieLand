@@ -38,21 +38,20 @@ namespace MovieLand.Views
                 CardRiwayatPemesanan card = new CardRiwayatPemesanan();
                 card.SetData(item);
 
-                card.Size = new Size(406, 108);       // Ukuran sesuai desain kamu
-                card.Location = new Point(x, y);      // Set posisi manual
+                card.Size = new Size(406, 108);     
+                card.Location = new Point(x, y);    
 
-                this.Controls.Add(card);              // Tambah langsung ke UserControl
+                this.Controls.Add(card);              
 
-                x += card.Width + 30;                 // Geser ke kanan
+                x += card.Width + 30;              
                 counter++;
 
                 if (counter % maxPerRow == 0)
                 {
-                    x = 212;                          // Reset ke kiri
-                    y += card.Height + 10;            // Turun baris
+                    x = 212;                         
+                    y += card.Height + 10;      
                 }
             }
-            //MessageBox.Show("Jumlah transaksi ditemukan: " + riwayatList.Count);
         }
 
     }

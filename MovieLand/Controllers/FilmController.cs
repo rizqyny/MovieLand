@@ -19,8 +19,9 @@ namespace MovieLand.Controllers
             {
                 conn.Open();
                 string query = @"
-                SELECT *
-                FROM film
+                SELECT f.id_film, f.judul, f.durasi, f.deskripsi, f.harga, f.gambar, k.nama_kategori, f.id_kategori
+                FROM film f
+                JOIN kategori k ON f.id_kategori = k.id_kategori
             
                 ";
                 using (var cmd = new NpgsqlCommand(query, conn))
@@ -37,7 +38,8 @@ namespace MovieLand.Controllers
                                 deskripsi = reader.GetString(3),
                                 harga = reader.GetInt32(4),
                                 gambar = reader.GetString(5),
-                                id_kategori = reader.GetInt32(6)
+                                nama_kategori = reader.GetString(6),
+                                id_kategori = reader.GetInt32(7)
                             };
                             filmModel.Add(film);
                         }

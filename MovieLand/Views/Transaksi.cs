@@ -23,8 +23,6 @@ namespace MovieLand.Views
             _idFilm = idFilm;
             _nomorKursi = nomorKursi;
 
-            // (Opsional) tampilkan informasi di label kalau ingin
-            // labelInfo.Text = $"Film ID: {_idFilm}, Kursi: {_nomorKursi}";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -47,7 +45,6 @@ namespace MovieLand.Views
                 {
                     try
                     {
-                        // 1. Insert ke tabel transaksi
                         string insertQuery = @"
                         INSERT INTO transaksi (waktu, id_customer, nomor_kursi, id_film)
                         VALUES (CURRENT_TIMESTAMP, @idCustomer, @nomorKursi, @idFilm)";
@@ -60,7 +57,6 @@ namespace MovieLand.Views
                             cmd.ExecuteNonQuery();
                         }
 
-                        // 2. Update status kursi
                         string updateQuery = @"
                         UPDATE kursi SET status = 'Tidak Tersedia'
                         WHERE nomor_kursi = @nomorKursi";

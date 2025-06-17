@@ -16,7 +16,7 @@ namespace MovieLand.Models
         public string gambar { get; set; }
         public string nama_kategori { get; set; }
 
-        public int id_kategori { get; set; } // Tambahkan properti id_kategori jika diperlukan
+        public int id_kategori { get; set; } 
     }
 
 }

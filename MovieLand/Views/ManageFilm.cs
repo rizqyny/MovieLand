@@ -19,18 +19,84 @@ namespace MovieLand.Views
             InitializeComponent();
         }
 
+        private void LoadFilmData()
+        {
+            // Ambil data dulu ke variable agar tidak trigger auto-generate
+            var data = FilmController.GetAllFilm();
+
+            dgvFilm.Columns.Clear();
+            
+            dgvFilm.AutoGenerateColumns = false;
+
+            // Set DataSource terakhir agar kolom tidak auto terbentuk
+            dgvFilm.DataSource = data;
+
+            // Tambahkan hanya kolom yang diinginkan
+            dgvFilm.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "id_film",
+                HeaderText = "ID Film",
+                Name = "id_film"
+            });
+
+            dgvFilm.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "judul",
+                HeaderText = "Judul",
+                Name = "judul"
+            });
+
+            dgvFilm.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "durasi",
+                HeaderText = "Durasi (menit)",
+                Name = "durasi"
+            });
+
+            dgvFilm.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "deskripsi",
+                HeaderText = "Deskripsi",
+                Name = "deskripsi"
+            });
+
+            dgvFilm.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "harga",
+                HeaderText = "Harga",
+                Name = "harga"
+            });
+
+            dgvFilm.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "gambar",
+                HeaderText = "Path Gambar",
+                Name = "gambar"
+            });
+
+            dgvFilm.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "nama_kategori",
+                HeaderText = "Nama Kategori",
+                Name = "nama_kategori"
+            });
+
+
+            dgvFilm.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                DataPropertyName = "id_kategori",
+                HeaderText = "Kategori",
+                Name = "id_kategori"
+            });
+
+            
+        }
+
+
+
         private void ManageFilm_Load(object sender, EventArgs e)
         {
-            dgvFilm.DataSource = FilmController.GetAllFilm();
-
-            dgvFilm.Columns["id_film"].HeaderText = "ID Film";
-            dgvFilm.Columns["judul"].HeaderText = "Judul";
-            dgvFilm.Columns["durasi"].HeaderText = "Durasi (menit)";
-            dgvFilm.Columns["deskripsi"].HeaderText = "Deskripsi";
-            dgvFilm.Columns["harga"].HeaderText = "Harga";
-            dgvFilm.Columns["gambar"].HeaderText = "Path Gambar";
-            dgvFilm.Columns["id_kategori"].HeaderText = "Kategori";
-            dgvFilm.Columns["nama_kategori"].Visible = false;
+            LoadFilmData();
         }
 
         private void btnTambahFilm_Click(object sender, EventArgs e)
@@ -38,17 +104,18 @@ namespace MovieLand.Views
             TambahFilm tambahFilmForm = new TambahFilm();
             tambahFilmForm.ShowDialog();
 
-            // Refresh setelah tambah
-            dgvFilm.DataSource = null;
-            dgvFilm.Columns.Clear(); // Hapus semua kolom sebelumnya
-            dgvFilm.AutoGenerateColumns = true;
-            dgvFilm.DataSource = FilmController.GetAllFilm();
+            
+            //dgvFilm.DataSource = null;
+            //dgvFilm.Columns.Clear();
+            //dgvFilm.AutoGenerateColumns = true;
+            //dgvFilm.DataSource = FilmController.GetAllFilm();
+            LoadFilmData();
 
         }
 
         private void dgvFilm_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // (Kosongkan atau isi jika pakai tombol edit/hapus di grid)
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -66,7 +133,8 @@ namespace MovieLand.Views
                     if (success)
                     {
                         MessageBox.Show("Film berhasil dihapus.");
-                        dgvFilm.DataSource = FilmController.GetAllFilm();
+                        //dgvFilm.DataSource = FilmController.GetAllFilm();
+                        LoadFilmData();
                     }
                     else
                     {
@@ -96,18 +164,19 @@ namespace MovieLand.Views
                     gambar = selectedRow.Cells["gambar"].Value.ToString()
                 };
 
-                // Penanganan aman untuk id_kategori
+                
                 int.TryParse(selectedRow.Cells["id_kategori"].Value?.ToString(), out int idKategori);
                 selectedFilm.id_kategori = idKategori;
 
                 var editFilmForm = new EditFilm(selectedFilm);
                 editFilmForm.ShowDialog();
 
-                // Refresh
-                dgvFilm.DataSource = null;
-                dgvFilm.Columns.Clear();
-                dgvFilm.AutoGenerateColumns = true;
-                dgvFilm.DataSource = FilmController.GetAllFilm();
+                
+                //dgvFilm.DataSource = null;
+                //dgvFilm.Columns.Clear();
+                //dgvFilm.AutoGenerateColumns = true;
+                //dgvFilm.DataSource = FilmController.GetAllFilm();
+                LoadFilmData();
             }
             else
             {

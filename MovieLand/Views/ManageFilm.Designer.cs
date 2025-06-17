@@ -29,24 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageFilm));
-            dgvFilm = new DataGridView();
             btnTambahFilm = new Button();
             btnEdit = new Button();
             button1 = new Button();
+            dgvFilm = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dgvFilm).BeginInit();
             SuspendLayout();
-            // 
-            // dgvFilm
-            // 
-            dgvFilm.BackgroundColor = Color.CornflowerBlue;
-            dgvFilm.BorderStyle = BorderStyle.Fixed3D;
-            dgvFilm.ColumnHeadersHeight = 40;
-            dgvFilm.Location = new Point(177, 199);
-            dgvFilm.Name = "dgvFilm";
-            dgvFilm.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dgvFilm.Size = new Size(1103, 593);
-            dgvFilm.TabIndex = 2;
-            dgvFilm.CellContentClick += dgvFilm_CellContentClick;
             // 
             // btnTambahFilm
             // 
@@ -90,15 +78,24 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // dgvFilm
+            // 
+            dgvFilm.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvFilm.Location = new Point(207, 221);
+            dgvFilm.Name = "dgvFilm";
+            dgvFilm.RowHeadersWidth = 51;
+            dgvFilm.Size = new Size(953, 550);
+            dgvFilm.TabIndex = 6;
+            // 
             // ManageFilm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            Controls.Add(dgvFilm);
             Controls.Add(button1);
             Controls.Add(btnEdit);
             Controls.Add(btnTambahFilm);
-            Controls.Add(dgvFilm);
             ForeColor = SystemColors.ControlDarkDark;
             Name = "ManageFilm";
             Size = new Size(1470, 1080);
@@ -108,9 +105,9 @@
         }
 
         #endregion
-        private DataGridView dgvFilm;
         private Button btnTambahFilm;
         private Button btnEdit;
         private Button button1;
+        private DataGridView dgvFilm;
     }
 }
